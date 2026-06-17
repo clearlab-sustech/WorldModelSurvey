@@ -10,6 +10,12 @@ robot behavior?
 
 ## Website
 
+Live site:
+
+```text
+https://xiaoxiongzzzz.github.io/WorldModeSurvey/
+```
+
 The companion website is a static single-page site in [`website/`](website/).
 It includes:
 
