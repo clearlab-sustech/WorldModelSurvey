@@ -298,13 +298,13 @@ figcaption {
 }
 
 .section-heading {
-  max-width: var(--text);
+  max-width: var(--content);
   margin-bottom: clamp(28px, 5vw, 46px);
   text-align: left;
 }
 
 .section-heading.narrow {
-  max-width: 700px;
+  max-width: var(--content);
 }
 
 .section-heading p:not(.eyebrow) {
@@ -342,7 +342,7 @@ figcaption {
   border-left: 3px solid var(--accent);
   background: var(--surface-soft);
   color: var(--ink) !important;
-  font-size: 1.18rem;
+  font-size: 1.32rem;
   line-height: 1.6;
   letter-spacing: 0;
   white-space: nowrap;
@@ -386,6 +386,7 @@ figcaption {
 
 .taxonomy-intro h3 {
   margin-bottom: 4px;
+  white-space: nowrap;
 }
 
 .taxonomy-intro p {
@@ -425,6 +426,12 @@ figcaption {
   margin-bottom: 8px;
   font-size: clamp(1.8rem, 3.2vw, 3rem);
   line-height: 1.05;
+}
+
+#design-title,
+.taxonomy-intro h3,
+.taxonomy-title {
+  white-space: nowrap;
 }
 
 .taxonomy-caption {
@@ -722,6 +729,12 @@ figcaption {
   h1 {
     font-size: clamp(2.05rem, 10vw, 3.1rem);
     line-height: 1.04;
+  }
+
+  #design-title,
+  .taxonomy-intro h3,
+  .taxonomy-title {
+    white-space: normal;
   }
 
   .definition-grid,
