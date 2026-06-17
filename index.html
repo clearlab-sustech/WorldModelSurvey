@@ -86,7 +86,29 @@
               evolve under actions, often from partial observations rather than
               complete states.
             </p>
-            <p class="formula">o<sub>t+1</sub> ~ p(. | o<sub>0:t</sub>, a<sub>t</sub>)</p>
+            <p class="formula">
+              <math display="inline" aria-label="o t plus 1 is sampled from p conditioned on observation history and action">
+                <msub>
+                  <mi>o</mi>
+                  <mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow>
+                </msub>
+                <mo>∼</mo>
+                <mi>p</mi>
+                <mo stretchy="false">(</mo>
+                <mo>·</mo>
+                <mo>|</mo>
+                <msub>
+                  <mi>o</mi>
+                  <mrow><mn>0</mn><mo>:</mo><mi>t</mi></mrow>
+                </msub>
+                <mo>,</mo>
+                <msub>
+                  <mi>a</mi>
+                  <mi>t</mi>
+                </msub>
+                <mo stretchy="false">)</mo>
+              </math>
+            </p>
           </article>
           <article class="definition-card">
             <h3>World Action Model</h3>
@@ -96,7 +118,31 @@
               realize that future.
             </p>
             <p class="formula">
-              (o<sub>t+1:t+H</sub>, a<sub>t:t+H-1</sub>) ~ p(. | o<sub>t</sub>, l)
+              <math display="inline" aria-label="future observations and actions are sampled from p conditioned on current observation and language">
+                <mo stretchy="false">(</mo>
+                <msub>
+                  <mi>o</mi>
+                  <mrow><mi>t</mi><mo>+</mo><mn>1</mn><mo>:</mo><mi>t</mi><mo>+</mo><mi>H</mi></mrow>
+                </msub>
+                <mo>,</mo>
+                <msub>
+                  <mi>a</mi>
+                  <mrow><mi>t</mi><mo>:</mo><mi>t</mi><mo>+</mo><mi>H</mi><mo>−</mo><mn>1</mn></mrow>
+                </msub>
+                <mo stretchy="false">)</mo>
+                <mo>∼</mo>
+                <mi>p</mi>
+                <mo stretchy="false">(</mo>
+                <mo>·</mo>
+                <mo>|</mo>
+                <msub>
+                  <mi>o</mi>
+                  <mi>t</mi>
+                </msub>
+                <mo>,</mo>
+                <mi>l</mi>
+                <mo stretchy="false">)</mo>
+              </math>
             </p>
           </article>
         </div>
