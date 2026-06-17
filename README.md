@@ -1,102 +1,62 @@
 # Understanding World Models: A Tutorial Perspective
 
-This repository hosts the survey manuscript and companion website for
-**Understanding World Models: A Tutorial Perspective**.
+**Xiaoxiong Zhang** and **Wei Zhang**  
+Southern University of Science and Technology; LimX Dynamics
 
-The project organizes recent world-modeling work for embodied intelligence
-around a central question: what is predicted, in which representation space is
-prediction performed, and how can predicted futures be connected to executable
-robot behavior?
+[Website](https://xiaoxiongzzzz.github.io/WorldModeSurvey/) |
+[Paper PDF](https://xiaoxiongzzzz.github.io/WorldModeSurvey/assets/Understanding_World_Models__A_Tutorial_Perspective.pdf) |
+[Taxonomy](https://xiaoxiongzzzz.github.io/WorldModeSurvey/#design-space) |
+[Resource Browser](https://xiaoxiongzzzz.github.io/WorldModeSurvey/#resources) |
+[Citation](https://xiaoxiongzzzz.github.io/WorldModeSurvey/#citation)
 
-## Website
+This survey provides a tutorial-oriented map of world models for embodied
+intelligence. We organize existing work by asking three questions: what the
+model predicts, where prediction is performed, and how predicted futures can be
+connected to executable robot behavior.
 
-Live site:
+## Overview
 
-```text
-https://xiaoxiongzzzz.github.io/WorldModeSurvey/
-```
-
-The companion website is a static single-page site in [`website/`](website/).
-It includes:
-
-- a tutorial overview of world models and world action models;
-- figures from the survey for the main taxonomy;
-- a resource browser covering the deduplicated works listed in the survey;
-- filters for observation-space world models, state-space world models, and
-  world action model paradigms;
-- PDF and BibTeX links for the manuscript.
-
-GitHub Pages is configured through
-[`.github/workflows/pages.yml`](.github/workflows/pages.yml). On every push to
-`main`, the workflow publishes the contents of `website/` as the project page.
-
-## Survey Scope
-
-The survey first defines the *world* as a task-dependent set of relevant
-entities, then treats a *world model* as an action-conditioned predictive model
-of how task-relevant aspects of that world evolve.
-
-The taxonomy separates world models into two broad formulations:
+World models are action-conditioned predictive models of how task-relevant
+aspects of the world evolve. Since the world is only partially observable in
+many embodied settings, the prediction target can be either a future
+observation or a future state representation. This leads to two complementary
+formulations:
 
 - **Observation-space world models** directly predict future observations, such
-  as RGB frames, multi-view RGB, RGB-D observations, or point clouds. The survey
-  further characterizes them by observation explicitness and action abstraction.
-- **State-space world models** first abstract observations into a compact state
-  representation, then predict future evolution in that state space. The survey
-  groups representative states into latent states, point tracks,
-  neural-symbolic predicates, and physical states.
+  as RGB images, multi-view RGB, RGB-D frames, or point clouds. We organize this
+  family by observation explicitness and action abstraction.
+- **State-space world models** first abstract observations into a compact state,
+  then model future evolution in that state space. Representative state choices
+  include latent states, point tracks, neural-symbolic predicates, and physical
+  states.
 
-The survey then introduces **world action models**, which connect visual future
-prediction with executable robot actions. We organize existing approaches into
-four paradigms:
+## World Action Models
 
-- imagine-then-execute;
-- video-feature-conditioned action prediction;
-- joint video-action modeling;
-- auxiliary video prediction for policy learning.
+Prediction alone is not sufficient for embodied decision making: a robot must
+also infer which actions can realize an imagined future. We therefore discuss
+**world action models**, which connect visual future prediction with executable
+robot actions.
 
-## Repository Layout
+The survey groups world action models into four paradigms:
 
-```text
-.
-├── example_paper.tex      # Main LaTeX entry point
-├── sections/              # Survey sections
-├── figs/                  # Source figures used by the paper
-├── reference.bib          # Bibliography
-├── website/               # Static companion website
-│   ├── index.html
-│   ├── styles.css
-│   ├── script.js
-│   └── assets/            # Website PDFs and PNG figure exports
-├── tests/                 # Lightweight website checks
-└── docs/plans/            # Design and implementation notes
-```
+- **Imagine-then-execute**, where a visual future is generated first and then
+  grounded into actions by an inverse dynamics model or goal-conditioned policy.
+- **Video-feature-conditioned action prediction**, where intermediate features
+  from a video prediction model condition the action model without decoding a
+  full future video at inference time.
+- **Joint video-action modeling**, where a unified generative model predicts
+  both future observations and action sequences.
+- **Auxiliary video prediction for policy learning**, where future prediction
+  is used as a training objective to shape policy representations.
 
-## Local Preview
+## Resource Browser
 
-The website can be opened directly from `website/index.html`, or served locally:
+The companion website includes a filterable paper list aligned with the survey
+taxonomy. It covers observation-space world models, state-space world models,
+world action models, and foundation/video models used by related work.
 
-```bash
-python3 -m http.server 8000 --directory website
-```
-
-Then visit:
-
-```text
-http://localhost:8000
-```
-
-## Checks
-
-The repository includes small Python checks for website content and interaction
-behavior:
-
-```bash
-python3 tests/check_website.py
-python3 tests/check_interactions.py
-python3 tests/check_copy_button.py
-python3 tests/check_layout.py
-```
+Browse the list here:  
+https://xiaoxiongzzzz.github.io/WorldModeSurvey/#resources
 
 ## Citation
 
@@ -111,8 +71,7 @@ python3 tests/check_layout.py
 
 ## Contact
 
-Suggestions, taxonomy improvements, missing papers, and discussion are welcome.
-Please contact:
+Suggestions, taxonomy improvements, missing papers, and discussion are welcome:
 
 ```text
 12433017@mail.sustech.edu.cn
