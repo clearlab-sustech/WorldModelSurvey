@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Understanding World Models: A Tutorial Perspective</title>
+    <meta
+      name="description"
+      content="A tutorial-oriented survey website for world models and world action models in embodied intelligence."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Understanding World Models home">
+        <span class="brand-mark">WM</span>
+        <span>World Models Tutorial</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#overview">Overview</a>
+        <a href="#definitions">Definitions</a>
+        <a href="#design-space">Design Space</a>
+        <a href="#world-action-models">WAM</a>
+        <a href="#resources">Resources</a>
+        <a href="#citation">Citation</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section-band" id="overview" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow">Survey and tutorial map</p>
+          <h1 id="hero-title">Understanding World Models: A Tutorial Perspective</h1>
+          <p class="subtitle">
+            A tutorial survey that organizes world models by what they predict,
+            where prediction is performed, and how predicted futures can be
+            connected to embodied action.
+          </p>
+          <div class="authors" aria-label="Authors and affiliations">
+            <p><strong>Xiaoxiong Zhang</strong> and <strong>Wei Zhang</strong></p>
+            <p>Southern University of Science and Technology; LimX Dynamics</p>
+          </div>
+          <div class="hero-actions" aria-label="Paper resources">
+            <a class="button primary" href="assets/Understanding_World_Models__A_Tutorial_Perspective.pdf">Paper PDF</a>
+            <a class="button" href="#citation">BibTeX</a>
+            <a class="button" href="#design-space">Taxonomy</a>
+            <a class="button" href="#resources">Paper List</a>
+          </div>
+        </div>
+        <figure class="hero-figure">
+          <a href="assets/overview.pdf" aria-label="Open overview figure PDF">
+            <img
+              src="assets/overview.png"
+              alt="Overview comparing observation-space and state-space world model formulations."
+            >
+          </a>
+          <figcaption>
+            Two complementary formulations: direct future observation prediction
+            and structured state evolution under actions.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="section-band" id="definitions" aria-labelledby="definitions-title">
+        <div class="section-heading">
+          <p class="eyebrow">Core vocabulary</p>
+          <h2 id="definitions-title">📘 Definitions</h2>
+          <p>
+            The survey starts from a task-dependent notion of the world, then
+            separates predictive world models from action-oriented extensions.
+          </p>
+        </div>
+        <div class="definition-grid">
+          <article class="definition-card">
+            <h3>World</h3>
+            <p>
+              The world is the set of task-relevant entities under consideration.
+              Its boundary changes with the modeling objective, from a single
+              control system to a robot, objects, and the surrounding environment.
+            </p>
+          </article>
+          <article class="definition-card">
+            <h3>World Model</h3>
+            <p>
+              A world model captures how task-relevant aspects of the world
+              evolve under actions, often from partial observations rather than
+              complete states.
+            </p>
+            <p class="formula">o<sub>t+1</sub> ~ p(. | o<sub>0:t</sub>, a<sub>t</sub>)</p>
+          </article>
+          <article class="definition-card">
+            <h3>World Action Model</h3>
+            <p>
+              A world action model connects predicted futures with robot actions,
+              asking not only what may happen, but how an embodied agent can
+              realize that future.
+            </p>
+            <p class="formula">
+              (o<sub>t+1:t+H</sub>, a<sub>t:t+H-1</sub>) ~ p(. | o<sub>t</sub>, l)
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-band alt" id="design-space" aria-labelledby="design-title">
+        <div class="section-heading">
+          <p class="eyebrow">Predictive modeling choices</p>
+          <h2 id="design-title">🧭 World Model Design Space</h2>
+          <p>
+            We first divide world models into two formulations according to the
+            space in which prediction is performed: observation-space world
+            models and state-space world models.
+          </p>
+        </div>
+
+        <div class="taxonomy-intro" aria-label="World model taxonomy overview">
+          <article>
+            <span class="step-number">01</span>
+              <h3>🔮 Observation-Space World Models</h3>
+            <p>
+              These models predict future observations directly, such as RGB
+              images, RGB-D frames, or point clouds.
+            </p>
+          </article>
+          <article>
+            <span class="step-number">02</span>
+              <h3>🧩 State-Space World Models</h3>
+            <p>
+              These models first abstract observations into a state
+              representation, then predict how that state evolves.
+            </p>
+          </article>
+        </div>
+
+        <div class="taxonomy-layout">
+          <article class="design-feature">
+            <div class="taxonomy-subheading">
+              <h3 class="taxonomy-title">🔮 Observation-Space World Models</h3>
+              <p class="taxonomy-caption">
+                Classification criteria: observation explicitness and action abstraction.
+              </p>
+              <p>
+                For observation-space world models, we classify methods by what
+                future observation they generate and how the conditioning action
+                is represented. This yields a two-axis design space.
+              </p>
+            </div>
+            <figure class="figure-panel large">
+              <a href="assets/obsWM.pdf">
+                <img
+                  src="assets/obsWM.png"
+                  alt="Design space of observation-space world models."
+                >
+              </a>
+              <figcaption>Observation-space models organize future prediction by observation type and action abstraction.</figcaption>
+            </figure>
+          </article>
+
+          <article class="design-feature">
+            <div class="taxonomy-subheading">
+              <h3 class="taxonomy-title">🧩 State-Space World Models</h3>
+              <p class="taxonomy-caption">
+                Classification criteria: the state representation used for prediction.
+              </p>
+              <p>
+                For state-space world models, we classify methods by the
+                representation that mediates prediction. The key question is
+                what information is retained from observations before dynamics
+                are modeled.
+              </p>
+            </div>
+            <figure class="figure-panel large">
+              <a href="assets/stateWM.pdf">
+                <img
+                  src="assets/stateWM.png"
+                  alt="Design space of state-space world models."
+                >
+              </a>
+              <figcaption>State-space models trade raw visual fidelity for compactness, structure, and physical meaning.</figcaption>
+            </figure>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-band" id="world-action-models" aria-labelledby="wam-title">
+        <div class="section-heading">
+          <p class="eyebrow">From future prediction to action</p>
+          <h2 id="wam-title">🤖 World Action Models</h2>
+          <p>
+            World action models bridge language-conditioned video prediction and
+            embodied control. Existing work differs in how explicitly it uses
+            imagined futures during policy inference.
+          </p>
+        </div>
+
+        <figure class="wide-figure">
+          <a href="assets/wam.pdf">
+            <img
+              src="assets/wam.png"
+              alt="Taxonomy of world action model paradigms."
+            >
+          </a>
+          <figcaption>
+            Four ways to couple visual future prediction with action generation.
+          </figcaption>
+        </figure>
+
+        <div class="paradigm-grid">
+          <article class="paradigm-card">
+            <span class="tag">Explicit plan</span>
+            <h3>Imagine-then-execute</h3>
+            <p>
+              Generate visual subgoals or rollouts first, then use inverse
+              dynamics, pose estimation, flow, or goal-conditioned policies to
+              produce executable actions.
+            </p>
+          </article>
+          <article class="paradigm-card">
+            <span class="tag">Feature transfer</span>
+            <h3>Video-feature-conditioned action prediction</h3>
+            <p>
+              Reuse internal representations from video prediction backbones
+              without decoding full future frames at inference time.
+            </p>
+          </article>
+          <article class="paradigm-card">
+            <span class="tag">Unified model</span>
+            <h3>Joint video-action modeling</h3>
+            <p>
+              Learn a shared generative distribution over future observations
+              and corresponding robot action sequences.
+            </p>
+          </article>
+          <article class="paradigm-card">
+            <span class="tag">Training signal</span>
+            <h3>Auxiliary video prediction for policy learning</h3>
+            <p>
+              Use future prediction as an auxiliary objective to shape policy
+              representations, then remove the video branch during deployment.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-band alt" id="resources" aria-labelledby="resources-title">
+        <div class="section-heading">
+          <p class="eyebrow">Survey bibliography</p>
+          <h2 id="resources-title">📚 Resource Browser</h2>
+          <p>
+            The browser covers the deduplicated references in the survey and
+            follows the taxonomy used in the paper. Some works are cross-listed
+            when they appear in both world-model and world-action-model sections.
+          </p>
+        </div>
+
+        <div class="filter-bar" aria-label="Resource filters">
+          <button class="filter-button active" type="button" data-filter="all">All</button>
+          <button class="filter-button" type="button" data-filter="observation-space">Observation-Space</button>
+          <button class="filter-button" type="button" data-filter="rgb">RGB</button>
+          <button class="filter-button" type="button" data-filter="multi-view-rgb">Multi-view RGB</button>
+          <button class="filter-button" type="button" data-filter="rgb-d">RGB-D</button>
+          <button class="filter-button" type="button" data-filter="point-cloud">Point Cloud</button>
+          <button class="filter-button" type="button" data-filter="state-space">State-Space</button>
+          <button class="filter-button" type="button" data-filter="latent-state">Latent State</button>
+          <button class="filter-button" type="button" data-filter="point-track">Point Track</button>
+          <button class="filter-button" type="button" data-filter="neural-symbolic">Neural-Symbolic</button>
+          <button class="filter-button" type="button" data-filter="physical-state">Physical State</button>
+          <button class="filter-button" type="button" data-filter="wam">World Action Models</button>
+          <button class="filter-button" type="button" data-filter="imagine-execute">Imagine-then-execute</button>
+          <button class="filter-button" type="button" data-filter="video-feature">Video-feature</button>
+          <button class="filter-button" type="button" data-filter="joint-video-action">Joint Video-Action</button>
+          <button class="filter-button" type="button" data-filter="auxiliary-video">Auxiliary Video</button>
+          <button class="filter-button" type="button" data-filter="foundation-video">Foundation/Video</button>
+        </div>
+
+        <div class="resource-grid" id="resource-grid" aria-live="polite"></div>
+        <script type="application/json" id="resource-data">
+[
+  {"id":"particleformer","title":"ParticleFormer: A 3D Point Cloud World Model for Multi-Object, Multi-Material Robotic Manipulation","year":"2025","eprint":"2506.23126","url":"https://arxiv.org/abs/2506.23126","groups":["observation-space","point-cloud"],"tags":["Observation-space","Point cloud"]},
+  {"id":"pointworld","title":"PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation","year":"2026","eprint":"2601.03782","url":"https://arxiv.org/abs/2601.03782","groups":["observation-space","point-cloud"],"tags":["Observation-space","Point cloud"]},
+  {"id":"flowdreamer","title":"FlowDreamer: A RGB-D World Model with Flow-based Motion Representations for Robot Manipulation","year":"2025","eprint":"2505.10075","url":"https://arxiv.org/abs/2505.10075","groups":["observation-space","rgb-d"],"tags":["Observation-space","RGB-D"]},
+  {"id":"roboscape","title":"RoboScape: Physics-informed Embodied World Model","year":"2025","eprint":"2506.23135","url":"https://arxiv.org/abs/2506.23135","groups":["observation-space","rgb-d"],"tags":["Observation-space","RGB-D"]},
+  {"id":"tesseract","title":"TesserAct: Learning 4D Embodied World Models","year":"2025","eprint":"2504.20995","url":"https://arxiv.org/abs/2504.20995","groups":["observation-space","rgb-d"],"tags":["Observation-space","RGB-D"]},
+  {"id":"clover","title":"Closed-Loop Visuomotor Control with Generative Expectation for Robotic Manipulation","year":"2024","eprint":"2409.09016","url":"https://arxiv.org/abs/2409.09016","groups":["observation-space","rgb-d"],"tags":["Observation-space","RGB-D"]},
+  {"id":"ctrl-world","title":"Ctrl-World: A Controllable Generative World Model for Robot Manipulation","year":"2026","eprint":"2510.10125","url":"https://arxiv.org/abs/2510.10125","groups":["observation-space","multi-view-rgb"],"tags":["Observation-space","Multi-view RGB"]},
+  {"id":"enerverse","title":"EnerVerse: Envisioning Embodied Future Space for Robotics Manipulation","year":"2025","eprint":"2501.01895","url":"https://arxiv.org/abs/2501.01895","groups":["observation-space","multi-view-rgb"],"tags":["Observation-space","Multi-view RGB"]},
+  {"id":"vidar","title":"Vidar: Embodied Video Diffusion Model for Generalist Manipulation","year":"2025","eprint":"2507.12898","url":"https://arxiv.org/abs/2507.12898","groups":["observation-space","multi-view-rgb","wam","imagine-execute"],"tags":["Observation-space","Multi-view RGB","Imagine-then-execute"]},
+  {"id":"gpc","title":"Inference-Time Enhancement of Generative Robot Policies via Predictive World Modeling","year":"2026","eprint":"2502.00622","url":"https://arxiv.org/abs/2502.00622","groups":["observation-space","rgb"],"tags":["Observation-space","RGB"]},
+  {"id":"dreamdojo","title":"DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos","year":"2026","eprint":"2602.06949","url":"https://arxiv.org/abs/2602.06949","groups":["observation-space","rgb","foundation-video"],"tags":["Observation-space","RGB","Foundation/video"]},
+  {"id":"lingbot-world","title":"Advancing Open-source World Models","year":"2026","eprint":"2601.20540","url":"https://arxiv.org/abs/2601.20540","groups":["observation-space","rgb","foundation-video"],"tags":["Observation-space","RGB","Foundation/video"]},
+  {"id":"adaworld","title":"AdaWorld: Learning Adaptable World Models with Latent Actions","year":"2025","eprint":"2503.18938","url":"https://arxiv.org/abs/2503.18938","groups":["observation-space","rgb"],"tags":["Observation-space","RGB","Latent action"]},
+  {"id":"cosmos","title":"World Simulation with Video Foundation Models for Physical AI","year":"2026","eprint":"2511.00062","url":"https://arxiv.org/abs/2511.00062","groups":["observation-space","rgb","foundation-video"],"tags":["Observation-space","RGB","Foundation/video"]},
+  {"id":"unipi","title":"Learning Universal Policies via Text-Guided Video Generation","year":"2023","eprint":"2302.00111","url":"https://arxiv.org/abs/2302.00111","groups":["observation-space","rgb","wam","imagine-execute"],"tags":["Observation-space","RGB","Imagine-then-execute"]},
+  {"id":"avdc","title":"Learning to Act from Actionless Videos through Dense Correspondences","year":"2023","eprint":"2310.08576","url":"https://arxiv.org/abs/2310.08576","groups":["observation-space","rgb","wam","imagine-execute"],"tags":["Observation-space","RGB","Imagine-then-execute"]},
+  {"id":"susie","title":"Zero-Shot Robotic Manipulation with Pretrained Image-Editing Diffusion Models","year":"2023","eprint":"2310.10639","url":"https://arxiv.org/abs/2310.10639","groups":["observation-space","rgb","wam","imagine-execute"],"tags":["Observation-space","RGB","Imagine-then-execute"]},
+  {"id":"v2a","title":"Grounding Video Models to Actions through Goal Conditioned Exploration","year":"2025","eprint":"2411.07223","url":"https://arxiv.org/abs/2411.07223","groups":["observation-space","rgb"],"tags":["Observation-space","RGB"]},
+  {"id":"gvftape","title":"Generative Visual Foresight Meets Task-Agnostic Pose Estimation in Robotic Table-Top Manipulation","year":"2025","eprint":"2509.00361","url":"https://arxiv.org/abs/2509.00361","groups":["observation-space","rgb-d","wam","imagine-execute"],"tags":["Observation-space","RGB-D","Imagine-then-execute"]},
+  {"id":"genie3","title":"Genie 3: A New Frontier for World Models","year":"2025","url":"https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/","groups":["observation-space","rgb","foundation-video"],"tags":["Observation-space","RGB","Foundation/video"]},
+  {"id":"rtfm","title":"RTFM: A Real-Time Frame Model","year":"2025","url":"https://www.worldlabs.ai/blog/rtfm","groups":["observation-space","rgb","foundation-video"],"tags":["Observation-space","RGB","Foundation/video"]},
+  {"id":"huang2025ladiwm","title":"LaDi-WM: A Latent Diffusion-based World Model for Predictive Manipulation","year":"2025","eprint":"2505.11528","groups":["state-space","latent-state"],"tags":["State-space","Latent state"]},
+  {"id":"yin2025womap","title":"WoMAP: World Models For Embodied Open-Vocabulary Object Localization","year":"2025","eprint":"2506.01600","groups":["state-space","latent-state"],"tags":["State-space","Latent state"]},
+  {"id":"jeong2025ocwm","title":"Object-Centric World Model for Language-Guided Manipulation","year":"2025","eprint":"2503.06170","groups":["state-space","latent-state"],"tags":["State-space","Latent state"]},
+  {"id":"zhou2024dinowm","title":"DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning","year":"2024","eprint":"2411.04983","groups":["state-space","latent-state"],"tags":["State-space","Latent state"]},
+  {"id":"maes2025leworldmodel","title":"LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels","year":"2025","eprint":"2603.19312","groups":["state-space","latent-state"],"tags":["State-space","Latent state"]},
+  {"id":"goswami2025osviwm","title":"OSVI-WM: One-Shot Visual Imitation for Unseen Tasks using World-Model-Guided Trajectory Generation","year":"2025","eprint":"2505.20425","groups":["state-space","latent-state"],"tags":["State-space","Latent state"]},
+  {"id":"assran2025vjepa2","title":"V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning","year":"2025","eprint":"2506.09985","groups":["state-space","latent-state","foundation-video"],"tags":["State-space","Latent state","Foundation/video"]},
+  {"id":"wu2022daydreamer","title":"DayDreamer: World Models for Physical Robot Learning","year":"2022","eprint":"2206.14176","groups":["state-space","latent-state"],"tags":["State-space","Latent state"]},
+  {"id":"hafner2023dreamerv3","title":"Mastering Diverse Domains through World Models","year":"2023","eprint":"2301.04104","groups":["state-space","latent-state"],"tags":["State-space","Latent state"]},
+  {"id":"hansen2024tdmpc2","title":"TD-MPC2: Scalable, Robust World Models for Continuous Control","year":"2024","eprint":"2310.16828","groups":["state-space","latent-state"],"tags":["State-space","Latent state"]},
+  {"id":"li2025pinwm","title":"PIN-WM: Learning Physics-INformed World Models for Non-Prehensile Manipulation","year":"2025","eprint":"2504.16693","groups":["state-space","physical-state"],"tags":["State-space","Physical state"]},
+  {"id":"jiang2025phystwin","title":"PhysTwin: Physics-Informed Reconstruction and Simulation of Deformable Objects from Videos","year":"2025","eprint":"2503.17973","groups":["state-space","physical-state"],"tags":["State-space","Physical state"]},
+  {"id":"wang2025embodiedreamer","title":"EmbodieDreamer: Advancing Real2Sim2Real Transfer for Policy Training via Embodied World Modeling","year":"2025","eprint":"2507.05198","groups":["state-space","physical-state"],"tags":["State-space","Physical state"]},
+  {"id":"wang2025contactgaussianwm","title":"ContactGaussian-WM: Learning Physics-Grounded World Model from Videos","year":"2026","eprint":"2602.11021","groups":["state-space","physical-state"],"tags":["State-space","Physical state"]},
+  {"id":"zhi20253dflowaction","title":"3DFlowAction: Learning Cross-Embodiment Manipulation from 3D Flow World Model","year":"2025","eprint":"2506.06199","groups":["state-space","point-track"],"tags":["State-space","Point track"]},
+  {"id":"wang2025skil","title":"SKIL: Semantic Keypoint Imitation Learning for Generalizable Data-efficient Manipulation","year":"2025","eprint":"2501.14400","groups":["state-space","point-track"],"tags":["State-space","Point track"]},
+  {"id":"xu2024im2flow2act","title":"Flow as the Cross-Domain Manipulation Interface","year":"2024","eprint":"2407.15208","groups":["state-space","point-track"],"tags":["State-space","Point track"]},
+  {"id":"wen2024atm","title":"Any-point Trajectory Modeling for Policy Learning","year":"2024","eprint":"2401.00025","groups":["state-space","point-track","wam","imagine-execute"],"tags":["State-space","Point track","Imagine-then-execute"]},
+  {"id":"liang2025exopredicator","title":"ExoPredicator: Learning Abstract Models of Dynamic Worlds for Robot Planning","year":"2025","eprint":"2509.26255","groups":["state-space","neural-symbolic"],"tags":["State-space","Neural-symbolic"]},
+  {"id":"liang2024visualpredicator","title":"VisualPredicator: Learning Abstract World Models with Neuro-Symbolic Predicates for Robot Planning","year":"2024","eprint":"2410.23156","groups":["state-space","neural-symbolic"],"tags":["State-space","Neural-symbolic"]},
+  {"id":"rigvid","title":"Robotic Manipulation by Imitating Generated Videos Without Physical Demonstrations","year":"2026","eprint":"2507.00990","url":"https://arxiv.org/abs/2507.00990","groups":["wam","imagine-execute"],"tags":["World action model","Imagine-then-execute"]},
+  {"id":"collins2025amplify","title":"AMPLIFY: Actionless Motion Priors for Robot Learning from Videos","year":"2025","eprint":"2506.14198","groups":["wam","imagine-execute"],"tags":["World action model","Imagine-then-execute"]},
+  {"id":"liang2024dreamitate","title":"Dreamitate: Real-World Visuomotor Policy Learning via Video Generation","year":"2024","eprint":"2406.16862","groups":["wam","imagine-execute"],"tags":["World action model","Imagine-then-execute"]},
+  {"id":"ye2026dreamzero","title":"DreamZero: World Action Models are Zero-shot Policies","year":"2026","eprint":"2602.15922","groups":["wam","joint-video-action"],"tags":["World action model","Joint video-action"]},
+  {"id":"kim2026cosmospolicy","title":"Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning","year":"2026","eprint":"2601.16163","groups":["wam","joint-video-action"],"tags":["World action model","Joint video-action"]},
+  {"id":"cheang2024gr2","title":"GR-2: A Generative Video-Language-Action Model with Web-Scale Knowledge for Robot Manipulation","year":"2024","eprint":"2410.06158","groups":["wam","joint-video-action"],"tags":["World action model","Joint video-action"]},
+  {"id":"li2026lingbotva","title":"LingBot-VA: Causal World Modeling for Robot Control","year":"2026","eprint":"2601.21998","groups":["wam","joint-video-action"],"tags":["World action model","Joint video-action"]},
+  {"id":"yuan2026fastwam","title":"Fast-WAM: Do World Action Models Need Test-time Future Imagination?","year":"2026","eprint":"2603.16666","groups":["wam","auxiliary-video"],"tags":["World action model","Auxiliary video"]},
+  {"id":"zhu2025uwm","title":"Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets","year":"2025","eprint":"2504.02792","groups":["wam","auxiliary-video"],"tags":["World action model","Auxiliary video"]},
+  {"id":"li2025uva","title":"Unified Video Action Model","year":"2025","eprint":"2503.00200","groups":["wam","auxiliary-video"],"tags":["World action model","Auxiliary video"]},
+  {"id":"bu2025univla","title":"UniVLA: Learning to Act Anywhere with Task-centric Latent Actions","year":"2025","eprint":"2505.06111","groups":["wam","auxiliary-video"],"tags":["World action model","Auxiliary video"]},
+  {"id":"bi2026motus","title":"Motus: A Unified Latent Action World Model","year":"2026","eprint":"2512.13030","groups":["wam","auxiliary-video"],"tags":["World action model","Auxiliary video"]},
+  {"id":"videopolicy","title":"Video Generators are Robot Policies","year":"2025","eprint":"2508.00795","url":"https://arxiv.org/abs/2508.00795","groups":["wam","video-feature"],"tags":["World action model","Video-feature"]},
+  {"id":"hu2025vpp","title":"Video Prediction Policy: A Generalist Robot Policy with Predictive Visual Representations","year":"2025","eprint":"2412.14803","groups":["wam","video-feature"],"tags":["World action model","Video-feature"]},
+  {"id":"ma2026dit4dit","title":"DiT4DiT: Jointly Modeling Video Dynamics and Actions for Generalizable Robot Control","year":"2026","eprint":"2603.10448","groups":["wam","video-feature"],"tags":["World action model","Video-feature"]},
+  {"id":"pai2026mimicvideo","title":"mimic-video: Video-Action Models for Generalizable Robot Control Beyond VLAs","year":"2026","eprint":"2512.15692","groups":["wam","video-feature"],"tags":["World action model","Video-feature"]},
+  {"id":"wan2025","title":"Wan: Open and Advanced Large-Scale Video Generative Models","year":"2025","eprint":"2503.20314","groups":["foundation-video"],"tags":["Foundation/video"]}
+]
+        </script>
+      </section>
+
+      <section class="section-band contact-band" id="contact" aria-labelledby="contact-title">
+        <div class="contact-panel">
+          <div>
+            <p class="eyebrow">Feedback and updates</p>
+            <h2 id="contact-title">💬 Contribute to this survey</h2>
+            <p>
+              If you have suggestions, ideas for improving the taxonomy, works
+              that should be included, or would like to discuss world models and
+              world action models, please contact us.
+            </p>
+          </div>
+          <a class="button primary" href="mailto:12433017@mail.sustech.edu.cn">12433017@mail.sustech.edu.cn</a>
+        </div>
+      </section>
+
+      <section class="section-band" id="citation" aria-labelledby="citation-title">
+        <div class="section-heading narrow">
+          <p class="eyebrow">Cite this survey</p>
+          <h2 id="citation-title">✍️ Citation</h2>
+          <p>
+            The paper is currently represented by the local LaTeX source and
+            compiled PDF. Update venue and publication metadata here as the
+            manuscript changes.
+          </p>
+        </div>
+        <div class="citation-box">
+          <button class="button copy-button" type="button" id="copy-bibtex">Copy BibTeX</button>
+          <pre id="bibtex"><code>@article{zhang2026understandingworldmodels,
+  title   = {Understanding World Models: A Tutorial Perspective},
+  author  = {Zhang, Xiaoxiong and Zhang, Wei},
+  year    = {2026},
+  note    = {Survey manuscript}
+}</code></pre>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Built from the local survey source. Figures and PDF are mirrored in
+        <code>website/assets/</code> for static hosting.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
