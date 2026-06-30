@@ -1,13 +1,15 @@
 # From World Models to World Action Models: A Concise Tutorial for Robotics
 
-**Xiaoxiong Zhang, Xiong Zeng** and **Wei Zhang**  
+[**Xiaoxiong Zhang**](https://xiaoxiongzzzz.github.io/),
+[**Xiong Zeng**](https://zengxiong111.github.io/zengxiong.github.io/), and
+[**Wei Zhang**](https://www.wzhanglab.site/)
 Southern University of Science and Technology; LimX Dynamics
 
 [Website](https://clearlab-sustech.github.io/WorldModelSurvey/) |
-[Paper PDF](https://clearlab-sustech.github.io/WorldModeSurvey/assets/Understanding_World_Models__A_Tutorial_Perspective.pdf) |
-[Taxonomy](https://clearlab-sustech.github.io/WorldModeSurvey/#design-space) |
-[Resource Browser](https://clearlab-sustech.github.io/WorldModeSurvey/#resources) |
-[Citation](https://clearlab-sustech.github.io/WorldModeSurvey/#citation)
+[Paper PDF](https://clearlab-sustech.github.io/WorldModelSurvey/assets/Understanding_World_Models__A_Tutorial_Perspective.pdf) |
+[Taxonomy](https://clearlab-sustech.github.io/WorldModelSurvey/#design-space) |
+[Resource Browser](https://clearlab-sustech.github.io/WorldModelSurvey/#resources) |
+[Citation](https://clearlab-sustech.github.io/WorldModelSurvey/#citation)
 
 This survey provides a tutorial-oriented map of world models for embodied
 intelligence. We organize existing work by asking three questions: what the
@@ -49,6 +51,8 @@ The survey groups world action models into four paradigms:
 - **Auxiliary video prediction for policy learning**, where future prediction
   is used as a training objective to shape policy representations.
 
+![Taxonomy of world action model paradigms](website/assets/wam.png)
+
 ## Resource Browser
 
 The companion website includes a filterable paper list aligned with the survey
@@ -56,14 +60,14 @@ taxonomy. It covers observation-space world models, state-space world models,
 world action models, and foundation/video models used by related work.
 
 Browse the list here:  
-https://xiaoxiongzzzz.github.io/WorldModeSurvey/#resources
+https://clearlab-sustech.github.io/WorldModelSurvey/#resources
 
 ## Citation
 
 ```bibtex
-@article{zhang2026understandingworldmodels,
+@article{zhang2026worldactionmodels,
   title   = {From World Models to World Action Models: A Concise Tutorial for Robotics},
-  author  = {Zhang, Xiaoxiong, Xiong Zeng and Zhang, Wei},
+  author  = {Zhang, Xiaoxiong and Zeng, Xiong and Zhang, Wei},
   year    = {2026},
   note    = {Survey manuscript}
 }
