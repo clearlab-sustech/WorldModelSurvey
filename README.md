@@ -62,8 +62,8 @@ https://xiaoxiongzzzz.github.io/WorldModeSurvey/#resources
 
 ```bibtex
 @article{zhang2026understandingworldmodels,
-  title   = {Understanding World Models: A Tutorial Perspective},
-  author  = {Zhang, Xiaoxiong and Zhang, Wei},
+  title   = {From World Models to World Action Models: A Concise Tutorial for Robotics},
+  author  = {Zhang, Xiaoxiong, Xiong Zeng and Zhang, Wei},
   year    = {2026},
   note    = {Survey manuscript}
 }
