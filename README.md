@@ -3,11 +3,11 @@
 **Xiaoxiong Zhang** and **Wei Zhang**  
 Southern University of Science and Technology; LimX Dynamics
 
-[Website](https://xiaoxiongzzzz.github.io/WorldModeSurvey/) |
-[Paper PDF](https://xiaoxiongzzzz.github.io/WorldModeSurvey/assets/Understanding_World_Models__A_Tutorial_Perspective.pdf) |
-[Taxonomy](https://xiaoxiongzzzz.github.io/WorldModeSurvey/#design-space) |
-[Resource Browser](https://xiaoxiongzzzz.github.io/WorldModeSurvey/#resources) |
-[Citation](https://xiaoxiongzzzz.github.io/WorldModeSurvey/#citation)
+[Website](https://clearlab-sustech.github.io/WorldModelSurvey/) |
+[Paper PDF](https://clearlab-sustech.github.io/WorldModeSurvey/assets/Understanding_World_Models__A_Tutorial_Perspective.pdf) |
+[Taxonomy](https://clearlab-sustech.github.io/WorldModeSurvey/#design-space) |
+[Resource Browser](https://clearlab-sustech.github.io/WorldModeSurvey/#resources) |
+[Citation](https://clearlab-sustech.github.io/WorldModeSurvey/#citation)
 
 This survey provides a tutorial-oriented map of world models for embodied
 intelligence. We organize existing work by asking three questions: what the
