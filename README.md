@@ -1,6 +1,6 @@
-# Understanding World Models: A Tutorial Perspective
+# From World Models to World Action Models: A Concise Tutorial for Robotics
 
-**Xiaoxiong Zhang** and **Wei Zhang**  
+**Xiaoxiong Zhang, Xiong Zeng** and **Wei Zhang**  
 Southern University of Science and Technology; LimX Dynamics
 
 [Website](https://clearlab-sustech.github.io/WorldModelSurvey/) |
