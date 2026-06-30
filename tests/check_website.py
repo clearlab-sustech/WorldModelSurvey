@@ -74,7 +74,7 @@ def main():
 
     required_ids = {
         "overview",
-        "definitions",
+        "introduction",
         "design-space",
         "world-action-models",
         "resources",
@@ -93,6 +93,11 @@ def main():
         "assets/obsWM.png",
         "assets/stateWM.png",
         "assets/wam.png",
+        "assets/world.png",
+        "assets/two_tasks.png",
+        "assets/policy_all.png",
+        "assets/world_model.png",
+        "assets/world_model_examples.png",
         "styles.css",
         "script.js",
     ]
@@ -164,10 +169,13 @@ def main():
     assert any(len(resource["groups"]) > 1 for resource in resources), "expected at least one cross-listed resource"
 
     expected_text = [
-        "Understanding World Models",
+        "From World Models to World Action Models",
         "Xiaoxiong Zhang",
-        "A tutorial survey that organizes world models by what they predict",
-        "📘 Definitions",
+        "Xiong Zeng",
+        "A concise tutorial that builds from task-specific worlds",
+        "📘 Introduction",
+        "Embodied AI Task and Policy",
+        "World Models and World Action Models",
         "🧭 World Model Design Space",
         "🔮 Observation-Space World Models",
         "🧩 State-Space World Models",

@@ -3,22 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Understanding World Models: A Tutorial Perspective</title>
+    <title>From World Models to World Action Models: A Concise Tutorial for Robotics</title>
     <meta
       name="description"
-      content="A tutorial-oriented survey website for world models and world action models in embodied intelligence."
+      content="A concise tutorial on world models and world action models for embodied AI and robotics."
     >
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Understanding World Models home">
+      <a class="brand" href="#top" aria-label="World Models to World Action Models home">
         <span class="brand-mark">WM</span>
-        <span>World Models Tutorial</span>
+        <span>World (Action) Models</span>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
         <a href="#overview">Overview</a>
-        <a href="#definitions">Definitions</a>
+        <a href="#introduction">Introduction</a>
         <a href="#design-space">Design Space</a>
         <a href="#world-action-models">WAM</a>
         <a href="#resources">Resources</a>
@@ -30,14 +30,14 @@
       <section class="hero section-band" id="overview" aria-labelledby="hero-title">
         <div class="hero-content">
           <p class="eyebrow">Survey and tutorial map</p>
-          <h1 id="hero-title">Understanding World Models: A Tutorial Perspective</h1>
+          <h1 id="hero-title">From World Models to World Action Models: A Concise Tutorial for Robotics</h1>
           <p class="subtitle">
-            A tutorial survey that organizes world models by what they predict,
-            where prediction is performed, and how predicted futures can be
-            connected to embodied action.
+            A concise tutorial that builds from task-specific worlds and
+            embodied policies to predictive world models—and finally to models
+            that connect imagined futures with executable robot actions.
           </p>
           <div class="authors" aria-label="Authors and affiliations">
-            <p><strong>Xiaoxiong Zhang</strong> and <strong>Wei Zhang</strong></p>
+            <p><strong>Xiaoxiong Zhang</strong>, <strong>Xiong Zeng</strong>, and <strong>Wei Zhang</strong></p>
             <p>Southern University of Science and Technology; LimX Dynamics</p>
           </div>
           <div class="hero-actions" aria-label="Paper resources">
@@ -47,103 +47,134 @@
             <a class="button" href="#resources">Paper List</a>
           </div>
         </div>
-        <figure class="hero-figure">
-          <a href="assets/overview.pdf" aria-label="Open overview figure PDF">
-            <img
-              src="assets/overview.png"
-              alt="Overview comparing observation-space and state-space world model formulations."
-            >
-          </a>
-          <figcaption>
-            Two complementary formulations: direct future observation prediction
-            and structured state evolution under actions.
-          </figcaption>
-        </figure>
       </section>
 
-      <section class="section-band" id="definitions" aria-labelledby="definitions-title">
+      <section class="section-band introduction" id="introduction" aria-labelledby="introduction-title">
         <div class="section-heading">
-          <p class="eyebrow">Core vocabulary</p>
-          <h2 id="definitions-title">📘 Definitions</h2>
+          <p class="eyebrow">Architectural view</p>
+          <h2 id="introduction-title">📘 Introduction</h2>
           <p>
-            The survey starts from a task-dependent notion of the world, then
-            separates predictive world models from action-oriented extensions.
+            Predicting how the world evolves under actions is central to
+            embodied AI and generative simulation. A unified architecture makes
+            clear what a model represents, what it predicts, and how its
+            predictions support control, planning, decision making, and policy
+            learning.
           </p>
         </div>
-        <div class="definition-grid">
-          <article class="definition-card">
-            <h3>World</h3>
-            <p>
-              The world is the set of task-relevant entities under consideration.
-              Its boundary changes with the modeling objective, from a single
-              control system to a robot, objects, and the surrounding environment.
-            </p>
+
+        <div class="introduction-flow">
+          <article class="introduction-block">
+            <div class="introduction-copy">
+              <span class="step-number">01</span>
+              <div>
+                <h3>World</h3>
+                <p>
+                  The <em>world</em> is the set of all objects relevant to an
+                  embodied AI task. It consists of a <em>robot</em> and its
+                  <em>environment</em>; the environment contains both the
+                  <em>objects of interest</em> and the ambient environment.
+                </p>
+              </div>
+            </div>
+            <figure class="introduction-figure compact">
+              <a href="assets/world.pdf" aria-label="Open the components of a world figure as a PDF">
+                <img src="assets/world.png" alt="A world consists of a robot and an environment containing objects of interest and the ambient environment.">
+              </a>
+              <figcaption>Figure 1. Components of a task-specific world.</figcaption>
+            </figure>
           </article>
-          <article class="definition-card">
-            <h3>World Model</h3>
-            <p>
-              A world model captures how task-relevant aspects of the world
-              evolve under actions, often from partial observations rather than
-              complete states.
-            </p>
-            <p class="formula">
-              <math display="inline" aria-label="o t plus 1 is sampled from p conditioned on observation history and action">
-                <msub>
-                  <mi>o</mi>
-                  <mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow>
-                </msub>
-                <mo>∼</mo>
-                <mi>p</mi>
-                <mo stretchy="false">(</mo>
-                <mo>·</mo>
-                <mo>|</mo>
-                <msub>
-                  <mi>o</mi>
-                  <mrow><mn>0</mn><mo>:</mo><mi>t</mi></mrow>
-                </msub>
-                <mo>,</mo>
-                <msub>
-                  <mi>a</mi>
-                  <mi>t</mi>
-                </msub>
-                <mo stretchy="false">)</mo>
-              </math>
-            </p>
+
+          <article class="introduction-block">
+            <div class="introduction-copy">
+              <span class="step-number">02</span>
+              <div>
+                <h3>Embodied AI Task and Policy</h3>
+                <p>
+                  A <em>world configuration</em> describes the robot and every
+                  object in its environment. An embodied AI task asks a policy
+                  to transform an initial configuration into a target one by
+                  controlling the robot. The exact world is therefore
+                  task-dependent.
+                </p>
+                <p>
+                  Humanoid locomotion needs a robot and ground surface; robotic
+                  table cleaning additionally includes dishes, furniture, and
+                  the surrounding household environment.
+                </p>
+              </div>
+            </div>
+            <figure class="introduction-figure">
+              <a href="assets/two_tasks.pdf" aria-label="Open embodied AI task examples as a PDF">
+                <img src="assets/two_tasks.png" alt="Humanoid locomotion and robotic table-cleaning as two examples of task-specific worlds.">
+              </a>
+              <figcaption>Figure 2. Two embodied AI tasks instantiate different worlds and target configurations.</figcaption>
+            </figure>
+            <div class="policy-row">
+              <div>
+                <h4>A closed-loop policy</h4>
+                <p>
+                  At each step, a policy receives a language instruction
+                  <var>l</var> and current observation <var>o<sub>t</sub></var>,
+                  then outputs an action <var>a<sub>t</sub></var> to the robot.
+                  The policy may be a PID controller, an MPC, a
+                  vision-language-action model, or a world action model.
+                </p>
+              </div>
+              <figure class="introduction-figure">
+                <a href="assets/policy_all.pdf" aria-label="Open the closed-loop policy framework as a PDF">
+                  <img src="assets/policy_all.png" alt="A language instruction and current world observation feed a policy that sends an action to the robot in a closed loop.">
+                </a>
+                <figcaption>Figure 3. A language-conditioned closed-loop policy framework.</figcaption>
+              </figure>
+            </div>
           </article>
-          <article class="definition-card">
-            <h3>World Action Model</h3>
-            <p>
-              A world action model connects predicted futures with robot actions,
-              asking not only what may happen, but how an embodied agent can
-              realize that future.
-            </p>
-            <p class="formula">
-              <math display="inline" aria-label="future observations and actions are sampled from p conditioned on current observation and language">
-                <mo stretchy="false">(</mo>
-                <msub>
-                  <mi>o</mi>
-                  <mrow><mi>t</mi><mo>+</mo><mn>1</mn><mo>:</mo><mi>t</mi><mo>+</mo><mi>H</mi></mrow>
-                </msub>
-                <mo>,</mo>
-                <msub>
-                  <mi>a</mi>
-                  <mrow><mi>t</mi><mo>:</mo><mi>t</mi><mo>+</mo><mi>H</mi><mo>−</mo><mn>1</mn></mrow>
-                </msub>
-                <mo stretchy="false">)</mo>
-                <mo>∼</mo>
-                <mi>p</mi>
-                <mo stretchy="false">(</mo>
-                <mo>·</mo>
-                <mo>|</mo>
-                <msub>
-                  <mi>o</mi>
-                  <mi>t</mi>
-                </msub>
-                <mo>,</mo>
-                <mi>l</mi>
-                <mo stretchy="false">)</mo>
-              </math>
-            </p>
+
+          <article class="introduction-block">
+            <div class="introduction-copy">
+              <span class="step-number">03</span>
+              <div>
+                <h3>World Models and World Action Models</h3>
+                <p>
+                  For a specified world, a <em>world model</em> predicts how a
+                  future observation <var>o<sub>t+1</sub></var> or state
+                  <var>x<sub>t+1</sub></var> evolves under action
+                  <var>a<sub>t</sub></var>, typically conditioned on observation
+                  history <var>o<sub>0:t</sub></var>.
+                </p>
+                <p>
+                  The model can be a symbolic dynamics equation, a neural
+                  dynamics model, or a diffusion-based video predictor.
+                  Observations may be RGB or RGB-D images, point clouds, or
+                  proprioceptive states; predicted states may be object poses,
+                  keypoints, latent states, or other task-relevant variables.
+                </p>
+              </div>
+            </div>
+            <figure class="introduction-figure wide">
+              <a href="assets/world_model.pdf" aria-label="Open the world model architecture figure as a PDF">
+                <img src="assets/world_model.png" alt="A world model predicts future observations or states from observation history and an action.">
+              </a>
+              <figcaption>Figure 4. A world model predicts future observations or states from observation history and action.</figcaption>
+            </figure>
+            <div class="examples-row">
+              <figure class="introduction-figure">
+                <a href="assets/world_model_examples.pdf" aria-label="Open examples of world models as a PDF">
+                  <img src="assets/world_model_examples.png" alt="Examples spanning symbolic, neural, and diffusion-based world models.">
+                </a>
+                <figcaption>Figure 5. World models range from symbolic equations to neural dynamics and diffusion video predictors.</figcaption>
+              </figure>
+              <div class="wam-callout">
+                <p class="eyebrow">From prediction to action</p>
+                <h4>World Action Model</h4>
+                <p>
+                  A <em>world action model</em> is a policy in the embodied AI
+                  framework above. It extends world modeling by explicitly
+                  associating predicted future observations or states with the
+                  actions that realize them.
+                </p>
+                <a class="text-link" href="#world-action-models">Explore the four WAM paradigms →</a>
+              </div>
+            </div>
           </article>
         </div>
       </section>
@@ -411,9 +442,9 @@
         </div>
         <div class="citation-box">
           <button class="button copy-button" type="button" id="copy-bibtex">Copy BibTeX</button>
-          <pre id="bibtex"><code>@article{zhang2026understandingworldmodels,
-  title   = {Understanding World Models: A Tutorial Perspective},
-  author  = {Zhang, Xiaoxiong and Zhang, Wei},
+          <pre id="bibtex"><code>@article{zhang2026worldactionmodels,
+  title   = {From World Models to World Action Models: A Concise Tutorial for Robotics},
+  author  = {Zhang, Xiaoxiong and Zeng, Xiong and Zhang, Wei},
   year    = {2026},
   note    = {Survey manuscript}
 }</code></pre>
