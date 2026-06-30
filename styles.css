@@ -148,10 +148,9 @@ pre {
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(420px, 1.15fr);
-  gap: clamp(28px, 5vw, 72px);
+  display: flex;
   align-items: center;
+  justify-content: center;
   min-height: calc(100vh - 64px);
   padding-top: clamp(46px, 7vw, 78px);
   padding-bottom: clamp(44px, 6vw, 72px);
@@ -165,15 +164,17 @@ pre {
 .paradigm-grid,
 .resource-grid,
 .citation-box,
-.definition-grid {
+.definition-grid,
+.introduction-flow {
   max-width: var(--content);
   margin-inline: auto;
   min-width: 0;
 }
 
 .hero-content {
-  max-width: 680px;
-  margin-right: 0;
+  width: min(100%, var(--content));
+  max-width: var(--content);
+  margin-inline: auto;
 }
 
 .eyebrow,
@@ -214,6 +215,12 @@ h3 {
   font-size: 1.25rem;
   line-height: 1.25;
   letter-spacing: 0;
+}
+
+h4 {
+  margin: 0 0 10px;
+  font-size: 1.08rem;
+  line-height: 1.3;
 }
 
 .subtitle {
@@ -353,6 +360,94 @@ figcaption {
   font-family: "STIX Two Math", "Cambria Math", "Latin Modern Math", "Times New Roman", serif;
   font-size: 1em;
   math-style: normal;
+}
+
+.introduction-flow {
+  display: grid;
+  gap: clamp(28px, 5vw, 52px);
+}
+
+.introduction-block {
+  display: grid;
+  gap: 22px;
+  padding: clamp(22px, 4vw, 38px);
+  border: 1px solid rgba(23, 32, 42, 0.12);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 12px 34px rgba(28, 41, 53, 0.07);
+}
+
+.introduction-copy {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  max-width: 900px;
+}
+
+.introduction-copy .step-number {
+  grid-row: auto;
+}
+
+.introduction-copy p,
+.policy-row p,
+.wam-callout p {
+  color: var(--muted);
+}
+
+.introduction-copy p:last-child,
+.policy-row p:last-child,
+.wam-callout p:last-of-type {
+  margin-bottom: 0;
+}
+
+.introduction-figure {
+  overflow: hidden;
+  border: 1px solid rgba(23, 32, 42, 0.11);
+  border-radius: var(--radius);
+  background: #ffffff;
+}
+
+.introduction-figure img {
+  width: 100%;
+  height: auto;
+}
+
+.introduction-figure.compact {
+  width: min(100%, 720px);
+  margin-inline: auto;
+}
+
+.introduction-figure.wide {
+  width: 100%;
+}
+
+.policy-row,
+.examples-row {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.7fr) minmax(0, 1.3fr);
+  gap: clamp(20px, 4vw, 40px);
+  align-items: center;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.examples-row {
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.5fr);
+}
+
+.wam-callout {
+  padding: 24px;
+  border-left: 4px solid var(--accent);
+  background: var(--surface-soft);
+}
+
+.wam-callout .eyebrow {
+  color: var(--accent-strong);
+}
+
+.text-link {
+  font-weight: 750;
 }
 
 .taxonomy-layout {
@@ -740,6 +835,20 @@ figcaption {
   .definition-grid,
   .paradigm-grid {
     grid-template-columns: 1fr;
+  }
+
+  .introduction-copy,
+  .policy-row,
+  .examples-row {
+    grid-template-columns: 1fr;
+  }
+
+  .introduction-copy {
+    gap: 12px;
+  }
+
+  .introduction-block {
+    padding: 18px;
   }
 
   .definition-card,
