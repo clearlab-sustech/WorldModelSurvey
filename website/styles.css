@@ -197,8 +197,8 @@ p {
 h1 {
   margin-bottom: 20px;
   max-width: 850px;
-  font-size: clamp(2.15rem, 3.3vw, 3.1rem);
-  line-height: 1.08;
+  font-size: clamp(2rem, 2.9vw, 2.7rem);
+  line-height: 1.1;
   letter-spacing: 0;
   overflow-wrap: break-word;
 }
@@ -226,7 +226,7 @@ h4 {
 .subtitle {
   max-width: 680px;
   color: #324150;
-  font-size: clamp(1rem, 1.45vw, 1.15rem);
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
   overflow-wrap: break-word;
 }
 
