@@ -151,9 +151,9 @@ pre {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 64px);
+  min-height: auto;
   padding-top: clamp(46px, 7vw, 78px);
-  padding-bottom: clamp(44px, 6vw, 72px);
+  padding-bottom: clamp(32px, 4vw, 48px);
 }
 
 .hero-content,
