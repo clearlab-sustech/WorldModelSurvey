@@ -197,8 +197,8 @@ p {
 h1 {
   margin-bottom: 20px;
   max-width: 850px;
-  font-size: clamp(2.4rem, 4.6vw, 4.5rem);
-  line-height: 1.02;
+  font-size: clamp(2.3rem, 3.8vw, 3.6rem);
+  line-height: 1.05;
   letter-spacing: 0;
   overflow-wrap: break-word;
 }
