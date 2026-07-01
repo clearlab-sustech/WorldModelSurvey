@@ -181,7 +181,7 @@ pre {
 .kicker {
   margin: 0 0 12px;
   color: var(--red);
-  font-size: 0.78rem;
+  font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -197,8 +197,8 @@ p {
 h1 {
   margin-bottom: 20px;
   max-width: 850px;
-  font-size: clamp(2rem, 2.9vw, 2.7rem);
-  line-height: 1.1;
+  font-size: clamp(1.95rem, 2.55vw, 2.35rem);
+  line-height: 1.12;
   letter-spacing: 0;
   overflow-wrap: break-word;
 }
@@ -226,7 +226,7 @@ h4 {
 .subtitle {
   max-width: 680px;
   color: #324150;
-  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  font-size: clamp(0.92rem, 1.05vw, 1rem);
   overflow-wrap: break-word;
 }
 
@@ -822,8 +822,8 @@ figcaption {
   }
 
   h1 {
-    font-size: clamp(2.05rem, 10vw, 3.1rem);
-    line-height: 1.04;
+    font-size: clamp(1.85rem, 8vw, 2.35rem);
+    line-height: 1.1;
   }
 
   #design-title,
