@@ -205,8 +205,8 @@ h1 {
 
 h2 {
   margin-bottom: 14px;
-  font-size: clamp(2rem, 4vw, 3.6rem);
-  line-height: 1.05;
+  font-size: clamp(1.55rem, 2.2vw, 1.9rem);
+  line-height: 1.15;
   letter-spacing: 0;
 }
 
@@ -747,7 +747,7 @@ figcaption {
 
 .contact-panel h2 {
   margin-bottom: 10px;
-  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  font-size: clamp(1.55rem, 2.2vw, 1.9rem);
 }
 
 .contact-panel p:not(.eyebrow) {
