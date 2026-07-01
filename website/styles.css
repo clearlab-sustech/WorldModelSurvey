@@ -433,19 +433,25 @@ figcaption {
 .policy-row,
 .examples-row {
   display: grid;
-  grid-template-columns: minmax(240px, 0.7fr) minmax(0, 1.3fr);
-  gap: clamp(20px, 4vw, 40px);
-  align-items: center;
-  padding-top: 22px;
+  grid-template-columns: minmax(0, 560px) minmax(280px, 420px);
+  justify-content: center;
+  gap: 24px;
+  align-items: start;
+  padding-top: 16px;
   border-top: 1px solid var(--line);
 }
 
 .examples-row {
-  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.5fr);
+  grid-template-columns: minmax(0, 520px) minmax(280px, 400px);
+}
+
+.policy-row .introduction-figure,
+.examples-row .introduction-figure {
+  width: 100%;
 }
 
 .wam-callout {
-  padding: 24px;
+  padding: 20px;
   border-left: 4px solid var(--accent);
   background: var(--surface-soft);
 }
