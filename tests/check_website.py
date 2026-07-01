@@ -109,7 +109,8 @@ def main():
     missing_refs = [
         ref
         for ref in local_refs
-        if is_local(ref) and not (SITE / ref.split("#", 1)[0]).exists()
+        if is_local(ref)
+        and not (SITE / ref.split("#", 1)[0].split("?", 1)[0]).exists()
     ]
     assert not missing_refs, f"missing referenced files: {missing_refs}"
 
