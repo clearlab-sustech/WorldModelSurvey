@@ -533,8 +533,8 @@ figcaption {
 
 .taxonomy-title {
   margin-bottom: 8px;
-  font-size: clamp(1.8rem, 3.2vw, 3rem);
-  line-height: 1.05;
+  font-size: clamp(1.25rem, 1.6vw, 1.45rem);
+  line-height: 1.2;
 }
 
 #design-title,
