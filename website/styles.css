@@ -13,8 +13,8 @@
   --gold: #98711d;
   --shadow: 0 18px 48px rgba(28, 41, 53, 0.1);
   --radius: 8px;
-  --content: 1180px;
-  --text: 760px;
+  --content: 980px;
+  --text: 720px;
 }
 
 * {
@@ -29,7 +29,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: Arial, Helvetica, ui-sans-serif, system-ui, sans-serif;
   line-height: 1.6;
 }
 
@@ -199,25 +199,31 @@ p {
   margin-top: 0;
 }
 
+h1,
+h2,
+.taxonomy-title {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
 h1 {
   margin-bottom: 20px;
   max-width: 850px;
-  font-size: clamp(1.95rem, 2.55vw, 2.35rem);
-  line-height: 1.12;
+  font-size: clamp(2.05rem, 3.1vw, 2.5rem);
+  line-height: 1.18;
   letter-spacing: 0;
   overflow-wrap: break-word;
 }
 
 h2 {
   margin-bottom: 14px;
-  font-size: clamp(1.55rem, 2.2vw, 1.9rem);
-  line-height: 1.15;
+  font-size: clamp(1.65rem, 2.5vw, 2rem);
+  line-height: 1.2;
   letter-spacing: 0;
 }
 
 h3 {
   margin-bottom: 10px;
-  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
   line-height: 1.25;
   letter-spacing: 0;
 }
@@ -407,11 +413,11 @@ figcaption {
 }
 
 .introduction-figure {
-  width: 37.5%;
+  width: min(100%, 720px);
   margin-inline: auto;
   overflow: hidden;
-  border: 1px solid rgba(23, 32, 42, 0.11);
-  border-radius: var(--radius);
+  border: 0;
+  border-radius: 0;
   background: #ffffff;
 }
 
@@ -421,13 +427,13 @@ figcaption {
 }
 
 .introduction-figure.compact {
-  width: 37.5%;
+  width: min(100%, 680px);
   max-width: 720px;
   margin-inline: auto;
 }
 
 .introduction-figure.wide {
-  width: 37.5%;
+  width: min(100%, 760px);
 }
 
 .policy-row,
@@ -533,7 +539,7 @@ figcaption {
 
 .taxonomy-title {
   margin-bottom: 8px;
-  font-size: clamp(1.25rem, 1.6vw, 1.45rem);
+  font-size: clamp(1.3rem, 1.8vw, 1.5rem);
   line-height: 1.2;
 }
 
@@ -570,13 +576,13 @@ figcaption {
 
 .figure-panel,
 .wide-figure {
-  width: 37.5%;
+  width: min(100%, 760px);
   margin-inline: auto;
   overflow: hidden;
-  border: 1px solid rgba(23, 32, 42, 0.12);
-  border-radius: var(--radius);
+  border: 0;
+  border-radius: 0;
   background: var(--surface);
-  box-shadow: 0 12px 34px rgba(28, 41, 53, 0.08);
+  box-shadow: none;
   min-width: 0;
 }
 
