@@ -1,6 +1,6 @@
 # From World Models to World Action Models: A Concise Tutorial for Robotics
 
-**Language / 语言:** English | [中文](README.zh-CN.md)
+English | [中文](README.zh-CN.md)
 
 [**Xiaoxiong Zhang**](https://xiaoxiongzzzz.github.io/),
 [**Xiong Zeng**](https://zengxiong111.github.io/zengxiong.github.io/), and
