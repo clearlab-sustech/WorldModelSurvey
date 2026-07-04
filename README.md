@@ -9,10 +9,6 @@ Southern University of Science and Technology; LimX Dynamics
 
 [Website](https://clearlab-sustech.github.io/WorldModelSurvey/) |
 [arXiv](https://arxiv.org/abs/2607.00836) |
-[Paper PDF](https://clearlab-sustech.github.io/WorldModelSurvey/assets/Understanding_World_Models__A_Tutorial_Perspective.pdf) |
-[Taxonomy](https://clearlab-sustech.github.io/WorldModelSurvey/#design-space) |
-[Resource Browser](https://clearlab-sustech.github.io/WorldModelSurvey/#resources) |
-[Citation](https://clearlab-sustech.github.io/WorldModelSurvey/#citation)
 
 This survey provides a tutorial-oriented map of world models for embodied
 intelligence. We organize existing work by asking three questions: what the
