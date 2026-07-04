@@ -1,9 +1,10 @@
 # From World Models to World Action Models: A Concise Tutorial for Robotics
 
+**Language / 语言:** English | [中文](README.zh-CN.md)
+
 [**Xiaoxiong Zhang**](https://xiaoxiongzzzz.github.io/),
 [**Xiong Zeng**](https://zengxiong111.github.io/zengxiong.github.io/), and
-[**Wei Zhang**](https://www.wzhanglab.site/)
-
+[**Wei Zhang**](https://www.wzhanglab.site/)<br>
 Southern University of Science and Technology; LimX Dynamics
 
 [Website](https://clearlab-sustech.github.io/WorldModelSurvey/) |
