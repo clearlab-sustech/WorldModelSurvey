@@ -9,10 +9,6 @@
 
 [项目主页](https://clearlab-sustech.github.io/WorldModelSurvey/) |
 [arXiv](https://arxiv.org/abs/2607.00836) |
-[论文 PDF](https://clearlab-sustech.github.io/WorldModelSurvey/assets/Understanding_World_Models__A_Tutorial_Perspective.pdf) |
-[分类体系](https://clearlab-sustech.github.io/WorldModelSurvey/#design-space) |
-[资源浏览器](https://clearlab-sustech.github.io/WorldModelSurvey/#resources) |
-[引用](https://clearlab-sustech.github.io/WorldModelSurvey/#citation)
 
 本综述以教程视角梳理具身智能中的世界模型。我们围绕三个核心问题组织已有研究：模型预测什么、预测发生在哪个表示空间中，以及如何将预测到的未来与可执行的机器人行为连接起来。
 
