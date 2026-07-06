@@ -462,8 +462,29 @@ figcaption {
   background: var(--surface-soft);
 }
 
+.wam-callout.standalone {
+  width: min(100%, 760px);
+  margin-inline: auto;
+  padding: clamp(20px, 3vw, 28px);
+}
+
 .wam-callout .eyebrow {
   color: var(--accent-strong);
+}
+
+.wam-callout-figure {
+  margin: 12px 0 16px;
+}
+
+.wam-callout-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wam-callout-figure figcaption {
+  margin-top: 8px;
+  font-size: 0.82rem;
 }
 
 .text-link {
