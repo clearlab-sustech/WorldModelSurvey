@@ -214,6 +214,25 @@ h1 {
   overflow-wrap: break-word;
 }
 
+.hero-title-block {
+  max-width: 850px;
+  margin-bottom: 20px;
+}
+
+.hero-title-block h1 {
+  margin-bottom: 6px;
+}
+
+.edited-date {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
 h2 {
   margin-bottom: 14px;
   font-size: clamp(1.65rem, 2.5vw, 2rem);
