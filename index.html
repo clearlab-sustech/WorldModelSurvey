@@ -8,7 +8,7 @@
       name="description"
       content="A concise tutorial on world models and world action models for embodied AI and robotics."
     >
-    <link rel="stylesheet" href="styles.css?v=20260702-2">
+    <link rel="stylesheet" href="styles.css?v=20260706-1">
   </head>
   <body>
     <header class="site-header">
@@ -158,24 +158,28 @@
               </a>
               <figcaption>Figure 4. A world model predicts future observations or states from observation history and action.</figcaption>
             </figure>
-            <div class="examples-row">
-              <figure class="introduction-figure">
-                <a href="assets/world_model_examples.pdf" aria-label="Open examples of world models as a PDF">
-                  <img src="assets/world_model_examples.png" alt="Examples spanning symbolic, neural, and diffusion-based world models.">
+            <figure class="introduction-figure wide">
+              <a href="assets/world_model_examples.pdf" aria-label="Open examples of world models as a PDF">
+                <img src="assets/world_model_examples.png" alt="Examples spanning symbolic, neural, and diffusion-based world models.">
+              </a>
+              <figcaption>Figure 5. World models range from symbolic equations to neural dynamics and diffusion video predictors.</figcaption>
+            </figure>
+            <div class="wam-callout standalone">
+              <p class="eyebrow">From prediction to action</p>
+              <h4>World Action Model</h4>
+              <figure class="wam-callout-figure">
+                <a href="assets/world_action_model.pdf" aria-label="Open the world action model architecture figure as a PDF">
+                  <img src="assets/world_action_model.png" alt="A world action model predicts future actions and optionally future observations from the current observation and current action.">
                 </a>
-                <figcaption>Figure 5. World models range from symbolic equations to neural dynamics and diffusion video predictors.</figcaption>
+                <figcaption>Figure 6. World action model input-output view.</figcaption>
               </figure>
-              <div class="wam-callout">
-                <p class="eyebrow">From prediction to action</p>
-                <h4>World Action Model</h4>
-                <p>
-                  A <em>world action model</em> is a policy in the embodied AI
-                  framework above. It extends world modeling by explicitly
-                  associating predicted future observations or states with the
-                  actions that realize them.
-                </p>
-                <a class="text-link" href="#world-action-models">Explore the four WAM paradigms →</a>
-              </div>
+              <p>
+                A <em>world action model</em> is a policy in the embodied AI
+                framework above. It extends world modeling by explicitly
+                associating predicted future observations or states with the
+                actions that realize them.
+              </p>
+              <a class="text-link" href="#world-action-models">Explore the four WAM paradigms →</a>
             </div>
           </article>
         </div>
@@ -271,18 +275,6 @@
             imagined futures during policy inference.
           </p>
         </div>
-
-        <figure class="wide-figure">
-          <a href="assets/world_action_model.pdf">
-            <img
-              src="assets/world_action_model.png"
-              alt="A world action model predicts future actions and optionally future observations from the current observation and current action."
-            >
-          </a>
-          <figcaption>
-            A world action model predicts future actions and optionally future observations from the current observation and action.
-          </figcaption>
-        </figure>
 
         <figure class="wide-figure">
           <a href="assets/wam.pdf">
