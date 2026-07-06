@@ -332,6 +332,7 @@ figcaption {
   padding: 14px 16px;
   color: var(--muted);
   font-size: 0.9rem;
+  text-align: center;
 }
 
 .section-heading {
