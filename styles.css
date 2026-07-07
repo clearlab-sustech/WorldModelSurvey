@@ -137,6 +137,24 @@ pre {
   color: var(--accent-strong);
 }
 
+.language-toggle {
+  flex: 0 0 auto;
+  min-height: 34px;
+  padding: 6px 12px;
+  border: 1px solid rgba(18, 77, 86, 0.26);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--accent-strong);
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.language-toggle:hover {
+  background: var(--accent-soft);
+}
+
 .section-band {
   width: 100%;
   padding: clamp(56px, 8vw, 96px) clamp(18px, 4vw, 56px);
@@ -872,6 +890,10 @@ figcaption {
 
   .site-nav {
     justify-content: flex-start;
+  }
+
+  .language-toggle {
+    min-height: 32px;
   }
 
   .site-nav a {
