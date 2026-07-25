@@ -6,9 +6,9 @@
     <title>From World Models to World Action Models: A Concise Tutorial for Robotics</title>
     <meta
       name="description"
-      content="A concise tutorial on world models and world action models for embodied AI and robotics."
+      content="A concise tutorial on world models and world action models for physical AI and robotics."
     >
-    <link rel="stylesheet" href="styles.css?v=20260706-4">
+    <link rel="stylesheet" href="styles.css?v=20260725">
   </head>
   <body>
     <header class="site-header">
@@ -33,12 +33,12 @@
           <p class="eyebrow">Survey and tutorial map</p>
           <div class="hero-title-block">
             <h1 id="hero-title">From World Models to World Action Models: A Concise Tutorial for Robotics</h1>
-            <p class="edited-date">Edited: July 13, 2026</p>
+            <p class="edited-date">Edited: July 25, 2026</p>
           </div>
           <p class="subtitle">
             A concise tutorial that builds from task-specific worlds and
-            embodied policies to predictive world models—and finally to models
-            that connect imagined futures with executable robot actions.
+            physical AI policies to predictive world models—and finally to
+            models that couple imagined futures with executable robot actions.
           </p>
           <div class="authors" aria-label="Authors and affiliations">
             <p>
@@ -61,10 +61,10 @@
           <h2 id="introduction-title">📘 Introduction</h2>
           <p>
             Predicting how the world evolves under actions is central to
-            embodied AI and generative simulation. A unified architecture makes
+            physical AI and generative simulation. A unified architecture makes
             clear what a model represents, what it predicts, and how its
-            predictions support control, planning, decision making, and policy
-            learning.
+            predictions support controller design, planning, decision making,
+            and policy learning.
           </p>
         </div>
 
@@ -75,16 +75,16 @@
               <div>
                 <h3>World</h3>
                 <p>
-                  The <em>world</em> is the set of all objects relevant to an
-                  embodied AI task. It consists of a <em>robot</em> and its
-                  <em>environment</em>; the environment contains both the
+                  The <em>world</em> is the set of task-relevant entities,
+                  including both the <em>robot</em> and its
+                  <em>environment</em>. The environment contains the
                   <em>objects of interest</em> and the ambient environment.
                 </p>
               </div>
             </div>
             <figure class="introduction-figure compact">
-              <a href="assets/world.pdf?v=20260713" aria-label="Open the components of a world figure as a PDF">
-                <img src="assets/world.png?v=20260713" alt="A world consists of a robot and an environment containing objects of interest and the ambient environment.">
+              <a href="assets/world.pdf?v=20260725" aria-label="Open the components of a world figure as a PDF">
+                <img src="assets/world.png?v=20260725" alt="A world consists of a robot and an environment containing objects of interest and the ambient environment.">
               </a>
               <figcaption>Figure 1. Components of a task-specific world.</figcaption>
             </figure>
@@ -94,43 +94,44 @@
             <div class="introduction-copy">
               <span class="step-number">02</span>
               <div>
-                <h3>Embodied AI Task and Policy</h3>
+                <h3>Physical AI Task and Policy</h3>
                 <p>
-                  A <em>world configuration</em> describes the robot and every
-                  object in its environment. An embodied AI task asks a policy
-                  to transform an initial configuration into a target one by
-                  controlling the robot. The exact world is therefore
-                  task-dependent.
+                  The <em>world state</em> is the joint task-relevant state of
+                  the robot, objects, other agents, and surrounding
+                  environment. A physical AI task asks a policy to drive the
+                  world from an initial state toward a goal set while satisfying
+                  task-specific constraints.
                 </p>
                 <p>
-                  Humanoid locomotion needs a robot and ground surface; robotic
-                  table cleaning additionally includes dishes, furniture, and
-                  the surrounding household environment.
+                  Autonomous driving includes the vehicle, traffic
+                  participants, and road environment; robotic table-cleaning
+                  includes the robot, dishes, rag, table, and household
+                  surroundings.
                 </p>
               </div>
             </div>
             <figure class="introduction-figure">
-              <a href="assets/two_tasks.pdf?v=20260713" aria-label="Open embodied AI task examples as a PDF">
-                <img src="assets/two_tasks.png?v=20260713" alt="Humanoid locomotion and robotic table-cleaning as two examples of task-specific worlds.">
+              <a href="assets/two_tasks.pdf?v=20260725" aria-label="Open physical AI task examples as a PDF">
+                <img src="assets/two_tasks.png?v=20260725" alt="Autonomous driving and robotic table-cleaning as two examples of physical AI tasks.">
               </a>
-              <figcaption>Figure 2. Two embodied AI tasks instantiate different worlds and target configurations.</figcaption>
+              <figcaption>Figure 2. Physical AI tasks: autonomous driving and robotic table-cleaning.</figcaption>
             </figure>
             <div class="policy-row">
               <div>
-                <h4>Policy in an embodied AI task</h4>
+                <h4>Policy framework for physical AI tasks</h4>
                 <p>
-                  At each step, a policy receives a language instruction
-                  <var>l</var> and current observation <var>o<sub>t</sub></var>,
-                  then outputs an action <var>a<sub>t</sub></var> to the robot.
-                  The policy may be a PID controller, an MPC, a
-                  vision-language-action model, or a world action model.
+                  A policy maps human intent <var>I</var> and the current
+                  observation <var>o<sub>t</sub></var> to a robot action
+                  <var>a<sub>t</sub></var>. It may be realized by a modular
+                  decision-planning-control pipeline, a fast-slow architecture,
+                  or an end-to-end policy.
                 </p>
               </div>
               <figure class="introduction-figure">
-                <a href="assets/policy_all.pdf?v=20260713" aria-label="Open the closed-loop policy framework as a PDF">
-                  <img src="assets/policy_all.png?v=20260713" alt="A language instruction and current world observation feed a policy that sends an action to the robot in a closed loop.">
+                <a href="assets/policy_all.pdf?v=20260725" aria-label="Open the closed-loop policy framework as a PDF">
+                  <img src="assets/policy_all.png?v=20260725" alt="Human intent and the current observation feed a policy that sends an action to the robot.">
                 </a>
-                <figcaption>Figure 3. A language-conditioned closed-loop policy framework.</figcaption>
+                <figcaption>Figure 3. A policy framework for accomplishing physical AI tasks.</figcaption>
               </figure>
             </div>
           </article>
@@ -156,32 +157,31 @@
                 </p>
               </div>
             </div>
-            <figure class="introduction-figure wide">
-              <a href="assets/world_model.pdf?v=20260713" aria-label="Open the world model architecture figure as a PDF">
-                <img src="assets/world_model.png?v=20260713" alt="A world model predicts future observations or states from observation history and an action.">
-              </a>
-              <figcaption>Figure 4. A world model predicts future observations or states from the current observation and action.</figcaption>
+            <figure class="introduction-figure wide model-comparison">
+              <div class="model-comparison-grid">
+                <a href="assets/world_model.pdf?v=20260725" aria-label="Open the world model architecture figure as a PDF">
+                  <img src="assets/world_model.png?v=20260725" alt="A world model predicts future observations or states from observation history and an action.">
+                </a>
+                <a href="assets/world_action_model.pdf?v=20260725" aria-label="Open the world action model architecture figure as a PDF">
+                  <img src="assets/world_action_model.png?v=20260725" alt="A world action model predicts future actions and optionally future observations from the current observation and current action.">
+                </a>
+              </div>
+              <figcaption>Figure 4. World (action) models.</figcaption>
             </figure>
             <figure class="introduction-figure wide">
-              <a href="assets/world_model_examples.pdf?v=20260713" aria-label="Open examples of world models as a PDF">
-                <img src="assets/world_model_examples.png?v=20260713" alt="Examples spanning symbolic, neural, and diffusion-based world models.">
+              <a href="assets/world_model_examples.pdf?v=20260725" aria-label="Open examples of world models as a PDF">
+                <img src="assets/world_model_examples.png?v=20260725" alt="Examples spanning symbolic, neural, and diffusion-based world models.">
               </a>
-              <figcaption>Figure 5. World models range from symbolic equations to neural dynamics and diffusion video predictors.</figcaption>
+              <figcaption>Figure 5. Examples of world models.</figcaption>
             </figure>
             <div class="wam-callout standalone">
               <p class="eyebrow">From prediction to action</p>
               <h4>World Action Model</h4>
-              <figure class="wam-callout-figure">
-                <a href="assets/world_action_model.pdf?v=20260713" aria-label="Open the world action model architecture figure as a PDF">
-                  <img src="assets/world_action_model.png?v=20260713" alt="A world action model predicts future actions and optionally future observations from the current observation and current action.">
-                </a>
-                <figcaption>Figure 6. A world action model predicts future actions (and observations) from the current observation and action.</figcaption>
-              </figure>
               <p>
-                A <em>world action model</em> is a policy in the embodied AI
-                framework above. It extends world modeling by explicitly
-                associating predicted future observations with the
-                actions that realize them.
+                A <em>world action model</em> is a policy whose action
+                generation is coupled, during training or inference, with a
+                model or representation of future world evolution. This
+                coupling may be explicit, latent, joint, or auxiliary.
               </p>
               <a class="text-link" href="#world-action-models">Explore the four WAM paradigms →</a>
             </div>
@@ -233,13 +233,13 @@
               </p>
             </div>
             <figure class="figure-panel large">
-              <a href="assets/obsWM.pdf?v=20260713">
+              <a href="assets/obsWM.pdf?v=20260725">
                 <img
-                  src="assets/obsWM.png?v=20260713"
+                  src="assets/obsWM.png?v=20260725"
                   alt="Design space of observation-space world models."
                 >
               </a>
-              <figcaption>Figure 7. Observation-space models organize future prediction by observation type and action abstraction.</figcaption>
+              <figcaption>Figure 6. Design space of observation-space world models.</figcaption>
             </figure>
           </article>
 
@@ -257,13 +257,13 @@
               </p>
             </div>
             <figure class="figure-panel large">
-              <a href="assets/stateWM.pdf?v=20260713">
+              <a href="assets/stateWM.pdf?v=20260725">
                 <img
-                  src="assets/stateWM.png?v=20260713"
+                  src="assets/stateWM.png?v=20260725"
                   alt="Design space of state-space world models."
                 >
               </a>
-              <figcaption>Figure 8. State-space models trade raw visual fidelity for compactness, structure, and physical meaning.</figcaption>
+              <figcaption>Figure 7. Design space of state-space world models.</figcaption>
             </figure>
           </article>
         </div>
@@ -274,21 +274,22 @@
           <p class="eyebrow">From future prediction to action</p>
           <h2 id="wam-title">🤖 World Action Models</h2>
           <p>
-            World action models bridge language-conditioned video prediction and
-            embodied control. Existing work differs in how explicitly it uses
-            imagined futures during policy inference.
+            World action models bridge future-oriented visual prediction and
+            physical decision making. Existing work differs in how explicitly
+            it represents future observations and how tightly those futures are
+            coupled with action generation.
           </p>
         </div>
 
         <figure class="wide-figure">
-          <a href="assets/wam.pdf?v=20260713">
+          <a href="assets/wam.pdf?v=20260725">
             <img
-              src="assets/wam.png?v=20260713"
+              src="assets/wam.png?v=20260725"
               alt="Taxonomy of world action model paradigms."
             >
           </a>
           <figcaption>
-            Figure 9. Four ways to couple visual future prediction with action generation.
+            Figure 8. Taxonomy of world action models.
           </figcaption>
         </figure>
 
@@ -469,6 +470,6 @@
       </p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260725"></script>
   </body>
 </html>

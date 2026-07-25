@@ -175,7 +175,7 @@ def main():
         "Xiong Zeng",
         "A concise tutorial that builds from task-specific worlds",
         "📘 Introduction",
-        "Embodied AI Task and Policy",
+        "Physical AI Task and Policy",
         "World Models and World Action Models",
         "🧭 World Model Design Space",
         "🔮 Observation-Space World Models",
