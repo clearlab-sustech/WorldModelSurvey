@@ -1,6 +1,6 @@
 # From World Models to World Action Models: A Concise Tutorial for Robotics
 
-English | [中文](README.zh-CN.md)
+**Language / 语言:** English | [中文](README.zh-CN.md)
 
 [**Xiaoxiong Zhang**](https://xiaoxiongzzzz.github.io/),
 [**Xiong Zeng**](https://zengxiong111.github.io/zengxiong.github.io/), and
@@ -9,56 +9,68 @@ Southern University of Science and Technology; LimX Dynamics
 
 [Website](https://clearlab-sustech.github.io/WorldModelSurvey/) |
 [arXiv](https://arxiv.org/abs/2607.00836) |
+[Paper PDF](https://clearlab-sustech.github.io/WorldModelSurvey/assets/Understanding_World_Models__A_Tutorial_Perspective.pdf) |
+[Resource Browser](https://clearlab-sustech.github.io/WorldModelSurvey/#resources) |
+[Citation](https://clearlab-sustech.github.io/WorldModelSurvey/#citation)
 
-This survey provides a tutorial-oriented map of world models for embodied
-intelligence. We organize existing work by asking three questions: what the
-model predicts, where prediction is performed, and how predicted futures can be
-connected to executable robot behavior.
+This repository hosts the companion website and curated bibliography for our
+concise tutorial on **world models** and **world action models** for robotics.
+Rather than aiming to be an exhaustive survey, the tutorial builds a compact
+architectural view: what constitutes a world, what a physical AI task asks a
+policy to do, how world models predict future world evolution, and how world
+action models couple those futures with executable actions.
 
-## Overview
+## Architectural view
 
-World models are action-conditioned predictive models of how task-relevant
-aspects of the world evolve. Since the world is only partially observable in
-many embodied settings, the prediction target can be either a future
-observation or a future state representation. This leads to two complementary
-formulations:
+A **world** is the set of task-relevant entities, including the robot and its
+environment. A **physical AI task** asks a policy to drive the world from an
+initial state toward a goal set while satisfying task-specific constraints.
+
+| World | Physical AI tasks | Policy framework |
+| --- | --- | --- |
+| ![Components of a task-specific world](website/assets/world.png) | ![Physical AI task examples](website/assets/two_tasks.png) | ![Policy framework for physical AI tasks](website/assets/policy_all.png) |
+
+## World models and world action models
+
+A **world model** predicts how future observations or states evolve under
+candidate actions, typically conditioned on the current observation. A **world
+action model** is a policy whose action generation is coupled, during training
+or inference, with a model or representation of future world evolution.
+
+| World model | World action model |
+| --- | --- |
+| ![World model input-output view](website/assets/world_model.png) | ![World action model input-output view](website/assets/world_action_model.png) |
+
+![Examples of world models](website/assets/world_model_examples.png)
+
+## Design space
+
+We organize world models according to the space in which prediction is
+performed:
 
 - **Observation-space world models** directly predict future observations, such
-  as RGB images, multi-view RGB, RGB-D frames, or point clouds. We organize this
-  family by observation explicitness and action abstraction.
-- **State-space world models** first abstract observations into a compact state,
-  then model future evolution in that state space. Representative state choices
-  include latent states, point tracks, neural-symbolic predicates, and physical
-  states.
+  as RGB images, multi-view RGB, RGB-D frames, or point clouds.
+- **State-space world models** first abstract observations into structured
+  states, then model future evolution in that state space.
 
-## World Action Models
+| Observation-space world models | State-space world models |
+| --- | --- |
+| ![Observation-space world model design space](website/assets/obsWM.png) | ![State-space world model design space](website/assets/stateWM.png) |
 
-Prediction alone is not sufficient for embodied decision making: a robot must
-also infer which actions can realize an imagined future. We therefore discuss
-**world action models**, which connect visual future prediction with executable
-robot actions.
+## World action model taxonomy
 
-The survey groups world action models into four paradigms:
-
-- **Imagine-then-execute**, where a visual future is generated first and then
-  grounded into actions by an inverse dynamics model or goal-conditioned policy.
-- **Video-feature-conditioned action prediction**, where intermediate features
-  from a video prediction model condition the action model without decoding a
-  full future video at inference time.
-- **Joint video-action modeling**, where a unified generative model predicts
-  both future observations and action sequences.
-- **Auxiliary video prediction for policy learning**, where future prediction
-  is used as a training objective to shape policy representations.
+World action models couple future-oriented visual prediction with physical
+decision making. The tutorial groups representative methods into four
+paradigms: imagine-then-execute, video-feature-conditioned action prediction,
+joint video-action modeling, and auxiliary video prediction for policy learning.
 
 ![Taxonomy of world action model paradigms](website/assets/wam.png)
 
-## Resource Browser
+## Resource browser
 
 The companion website includes a filterable paper list aligned with the survey
-taxonomy. It covers observation-space world models, state-space world models,
-world action models, and foundation/video models used by related work.
+taxonomy:
 
-Browse the list here:  
 https://clearlab-sustech.github.io/WorldModelSurvey/#resources
 
 ## Citation
