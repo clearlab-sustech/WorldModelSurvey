@@ -8,7 +8,7 @@
 Southern University of Science and Technology; LimX Dynamics
 
 [Website](https://clearlab-sustech.github.io/WorldModelSurvey/) |
-[arXiv](https://arxiv.org/abs/2607.00836) |
+[ArXiv](https://arxiv.org/abs/2607.00836) 
 
 
 This repository hosts the companion website and curated bibliography for our
