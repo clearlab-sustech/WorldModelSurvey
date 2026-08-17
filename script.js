@@ -16,7 +16,7 @@
     ".site-nav a[href='#citation']": "引用",
     "#overview .eyebrow": "综述与教程地图",
     "#hero-title": "从世界模型到世界动作模型：面向机器人学的简明教程",
-    ".edited-date": "编辑日期：2026 年 7 月 25 日",
+    ".edited-date": "编辑日期：2026 年 8 月 17 日",
     ".subtitle": "本教程从任务特定世界和物理 AI 策略出发，逐步介绍预测式世界模型，并进一步讨论如何将想象出的未来与可执行机器人动作耦合起来。",
     ".authors p:last-child": "南方科技大学；LimX Dynamics",
     "#introduction .section-heading .eyebrow": "架构视角",
