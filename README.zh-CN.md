@@ -1,6 +1,6 @@
 # 从世界模型到世界动作模型：面向机器人学的简明教程
 
-**语言 / Language:** [English](https://github.com/clearlab-sustech/WorldModelSurvey/blob/main/README.md) | 中文
+**语言 / Language:** [English](https://github.com/clearlab-sustech/WorldModelSurvey/blob/main/README.md?plain=1) | 中文
 
 [**Xiaoxiong Zhang**](https://xiaoxiongzzzz.github.io/),
 [**Xiong Zeng**](https://zengxiong111.github.io/zengxiong.github.io/) 和
