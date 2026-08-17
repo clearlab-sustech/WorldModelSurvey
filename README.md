@@ -9,9 +9,7 @@ Southern University of Science and Technology; LimX Dynamics
 
 [Website](https://clearlab-sustech.github.io/WorldModelSurvey/) |
 [arXiv](https://arxiv.org/abs/2607.00836) |
-[Paper PDF](https://clearlab-sustech.github.io/WorldModelSurvey/assets/Understanding_World_Models__A_Tutorial_Perspective.pdf) |
-[Resource Browser](https://clearlab-sustech.github.io/WorldModelSurvey/#resources) |
-[Citation](https://clearlab-sustech.github.io/WorldModelSurvey/#citation)
+
 
 This repository hosts the companion website and curated bibliography for our
 concise tutorial on **world models** and **world action models** for robotics.
