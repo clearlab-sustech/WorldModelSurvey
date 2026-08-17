@@ -28,9 +28,9 @@ initial state toward a goal set while satisfying task-specific constraints.
 
 <table>
   <tr>
-    <td align="center"><img src="website/assets/world.png" alt="Components of a task-specific world" width="260"></td>
-    <td align="center"><img src="website/assets/two_tasks.png" alt="Physical AI task examples" width="260"></td>
-    <td align="center"><img src="website/assets/policy_all.png" alt="Policy framework for physical AI tasks" width="260"></td>
+    <td align="center"><img src="https://clearlab-sustech.github.io/WorldModelSurvey/assets/world.png" alt="Components of a task-specific world" width="260"></td>
+    <td align="center"><img src="https://clearlab-sustech.github.io/WorldModelSurvey/assets/two_tasks.png" alt="Physical AI task examples" width="260"></td>
+    <td align="center"><img src="https://clearlab-sustech.github.io/WorldModelSurvey/assets/policy_all.png" alt="Policy framework for physical AI tasks" width="260"></td>
   </tr>
   <tr>
     <td align="center">World</td>
@@ -48,8 +48,8 @@ or inference, with a model or representation of future world evolution.
 
 <table>
   <tr>
-    <td align="center"><img src="website/assets/world_model.png" alt="World model input-output view" width="420"></td>
-    <td align="center"><img src="website/assets/world_action_model.png" alt="World action model input-output view" width="420"></td>
+    <td align="center"><img src="https://clearlab-sustech.github.io/WorldModelSurvey/assets/world_model.png" alt="World model input-output view" width="420"></td>
+    <td align="center"><img src="https://clearlab-sustech.github.io/WorldModelSurvey/assets/world_action_model.png" alt="World action model input-output view" width="420"></td>
   </tr>
   <tr>
     <td align="center">World model</td>
@@ -58,7 +58,7 @@ or inference, with a model or representation of future world evolution.
 </table>
 
 <p align="center">
-  <img src="website/assets/world_model_examples.png" alt="Examples of world models" width="840">
+  <img src="https://clearlab-sustech.github.io/WorldModelSurvey/assets/world_model_examples.png" alt="Examples of world models" width="840">
 </p>
 
 ## Design space
@@ -73,8 +73,8 @@ performed:
 
 <table>
   <tr>
-    <td align="center"><img src="website/assets/obsWM.png" alt="Observation-space world model design space" width="420"></td>
-    <td align="center"><img src="website/assets/stateWM.png" alt="State-space world model design space" width="420"></td>
+    <td align="center"><img src="https://clearlab-sustech.github.io/WorldModelSurvey/assets/obsWM.png" alt="Observation-space world model design space" width="420"></td>
+    <td align="center"><img src="https://clearlab-sustech.github.io/WorldModelSurvey/assets/stateWM.png" alt="State-space world model design space" width="420"></td>
   </tr>
   <tr>
     <td align="center">Observation-space world models</td>
@@ -90,7 +90,7 @@ paradigms: imagine-then-execute, video-feature-conditioned action prediction,
 joint video-action modeling, and auxiliary video prediction for policy learning.
 
 <p align="center">
-  <img src="website/assets/wam.png" alt="Taxonomy of world action model paradigms" width="840">
+  <img src="https://clearlab-sustech.github.io/WorldModelSurvey/assets/wam.png" alt="Taxonomy of world action model paradigms" width="840">
 </p>
 
 ## Resource browser

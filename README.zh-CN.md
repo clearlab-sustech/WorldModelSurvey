@@ -21,9 +21,9 @@
 
 <table>
   <tr>
-    <td align="center"><img src="website/assets/world.png" alt="任务特定世界的组成部分" width="260"></td>
-    <td align="center"><img src="website/assets/two_tasks.png" alt="物理 AI 任务示例" width="260"></td>
-    <td align="center"><img src="website/assets/policy_all.png" alt="物理 AI 任务策略框架" width="260"></td>
+    <td align="center"><img src="https://clearlab-sustech.github.io/WorldModelSurvey/assets/world.png" alt="任务特定世界的组成部分" width="260"></td>
+    <td align="center"><img src="https://clearlab-sustech.github.io/WorldModelSurvey/assets/two_tasks.png" alt="物理 AI 任务示例" width="260"></td>
+    <td align="center"><img src="https://clearlab-sustech.github.io/WorldModelSurvey/assets/policy_all.png" alt="物理 AI 任务策略框架" width="260"></td>
   </tr>
   <tr>
     <td align="center">World</td>
@@ -38,8 +38,8 @@
 
 <table>
   <tr>
-    <td align="center"><img src="website/assets/world_model.png" alt="世界模型输入输出视图" width="420"></td>
-    <td align="center"><img src="website/assets/world_action_model.png" alt="世界动作模型输入输出视图" width="420"></td>
+    <td align="center"><img src="https://clearlab-sustech.github.io/WorldModelSurvey/assets/world_model.png" alt="世界模型输入输出视图" width="420"></td>
+    <td align="center"><img src="https://clearlab-sustech.github.io/WorldModelSurvey/assets/world_action_model.png" alt="世界动作模型输入输出视图" width="420"></td>
   </tr>
   <tr>
     <td align="center">世界模型</td>
@@ -48,7 +48,7 @@
 </table>
 
 <p align="center">
-  <img src="website/assets/world_model_examples.png" alt="世界模型示例" width="840">
+  <img src="https://clearlab-sustech.github.io/WorldModelSurvey/assets/world_model_examples.png" alt="世界模型示例" width="840">
 </p>
 
 ## 设计空间
@@ -60,8 +60,8 @@
 
 <table>
   <tr>
-    <td align="center"><img src="website/assets/obsWM.png" alt="观测空间世界模型设计空间" width="420"></td>
-    <td align="center"><img src="website/assets/stateWM.png" alt="状态空间世界模型设计空间" width="420"></td>
+    <td align="center"><img src="https://clearlab-sustech.github.io/WorldModelSurvey/assets/obsWM.png" alt="观测空间世界模型设计空间" width="420"></td>
+    <td align="center"><img src="https://clearlab-sustech.github.io/WorldModelSurvey/assets/stateWM.png" alt="状态空间世界模型设计空间" width="420"></td>
   </tr>
   <tr>
     <td align="center">观测空间世界模型</td>
@@ -74,7 +74,7 @@
 世界动作模型将面向未来的视觉预测与物理决策耦合起来。本文将代表性方法归纳为四种范式：先想象再执行、视频特征条件动作预测、联合视频-动作建模，以及用于策略学习的辅助视频预测。
 
 <p align="center">
-  <img src="website/assets/wam.png" alt="世界动作模型分类体系" width="840">
+  <img src="https://clearlab-sustech.github.io/WorldModelSurvey/assets/wam.png" alt="世界动作模型分类体系" width="840">
 </p>
 
 ## 资源浏览器
