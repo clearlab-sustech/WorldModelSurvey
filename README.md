@@ -1,6 +1,6 @@
 # From World Models to World Action Models: A Concise Tutorial for Robotics
 
-English | [中文](https://clearlab-sustech.github.io/WorldModelSurvey/readme-zh.html)
+**Language / 语言:** English | [中文](https://clearlab-sustech.github.io/WorldModelSurvey/readme-zh.html)
 
 [**Xiaoxiong Zhang**](https://xiaoxiongzzzz.github.io/),
 [**Xiong Zeng**](https://zengxiong111.github.io/zengxiong.github.io/), and
@@ -9,6 +9,9 @@ Southern University of Science and Technology; LimX Dynamics
 
 [Website](https://clearlab-sustech.github.io/WorldModelSurvey/) |
 [ArXiv](https://arxiv.org/abs/2607.00836) |
+[Paper PDF](https://arxiv.org/pdf/2607.00836) |
+[Resource Browser](https://clearlab-sustech.github.io/WorldModelSurvey/#resources) |
+[Citation](https://clearlab-sustech.github.io/WorldModelSurvey/#citation)
 
 This repository hosts the companion website and curated bibliography for our
 concise tutorial on **world models** and **world action models** for robotics.
