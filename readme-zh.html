@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>中文 README · WorldModelSurvey</title>
+    <style>
+      :root {
+        color: #17212d;
+        background: #fbfaf7;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      body {
+        margin: 0;
+        line-height: 1.7;
+      }
+
+      main {
+        width: min(960px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 48px 0 72px;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.15;
+        margin: 0 0 16px;
+      }
+
+      h2 {
+        margin-top: 42px;
+        font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+      }
+
+      a {
+        color: #0c6570;
+        font-weight: 700;
+      }
+
+      .meta,
+      p,
+      li {
+        color: #425167;
+        font-size: 1.05rem;
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 22px 0 28px;
+      }
+
+      .links a {
+        border: 1px solid #c8d6dc;
+        border-radius: 999px;
+        padding: 8px 14px;
+        text-decoration: none;
+        background: white;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+
+      td {
+        text-align: center;
+        vertical-align: middle;
+        padding: 10px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      pre {
+        overflow-x: auto;
+        background: #f1f4f6;
+        border-radius: 14px;
+        padding: 16px;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      @media (max-width: 720px) {
+        main {
+          width: min(100% - 28px, 960px);
+          padding-top: 32px;
+        }
+
+        table,
+        tbody,
+        tr,
+        td {
+          display: block;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>从世界模型到世界动作模型：面向机器人学的简明教程</h1>
+      <p><strong>语言 / Language:</strong> <a href="https://github.com/clearlab-sustech/WorldModelSurvey">English</a> | 中文</p>
+      <p class="meta">
+        <a href="https://xiaoxiongzzzz.github.io/">Xiaoxiong Zhang</a>,
+        <a href="https://zengxiong111.github.io/zengxiong.github.io/">Xiong Zeng</a> 和
+        <a href="https://www.wzhanglab.site/">Wei Zhang</a><br>
+        南方科技大学；LimX Dynamics
+      </p>
+
+      <div class="links">
+        <a href="https://clearlab-sustech.github.io/WorldModelSurvey/">项目主页</a>
+        <a href="https://arxiv.org/abs/2607.00836">ArXiv</a>
+        <a href="https://arxiv.org/pdf/2607.00836">论文 PDF</a>
+        <a href="https://clearlab-sustech.github.io/WorldModelSurvey/#resources">资源浏览器</a>
+        <a href="https://clearlab-sustech.github.io/WorldModelSurvey/#citation">引用</a>
+      </div>
+
+      <p>
+        本仓库托管论文配套网站与整理后的参考文献列表。本文不是追求穷尽式综述，而是以教程视角建立一个紧凑的架构图景：什么构成一个 world，物理 AI 任务要求策略完成什么，世界模型如何预测未来世界演化，以及世界动作模型如何将这些未来与可执行动作耦合起来。
+      </p>
+
+      <h2>架构视角</h2>
+      <p><strong>世界（world）</strong>是任务相关实体的集合，包括机器人及其环境。<strong>物理 AI 任务</strong>要求策略在满足任务约束的同时，将世界从初始状态驱动到目标集合。</p>
+
+      <table>
+        <tr>
+          <td><img src="assets/world.png" alt="任务特定世界的组成部分" width="260"></td>
+          <td><img src="assets/two_tasks.png" alt="物理 AI 任务示例" width="260"></td>
+          <td><img src="assets/policy_all.png" alt="物理 AI 任务策略框架" width="260"></td>
+        </tr>
+        <tr>
+          <td>World</td>
+          <td>物理 AI 任务</td>
+          <td>策略框架</td>
+        </tr>
+      </table>
+
+      <h2>世界模型与世界动作模型</h2>
+      <p><strong>世界模型</strong>预测未来观测或状态如何在候选动作下演化，通常以当前观测为条件。<strong>世界动作模型</strong>是一类策略，其动作生成在训练或推理阶段与未来世界演化的模型或表示相耦合。</p>
+
+      <table>
+        <tr>
+          <td><img src="assets/world_model.png" alt="世界模型输入输出视图" width="420"></td>
+          <td><img src="assets/world_action_model.png" alt="世界动作模型输入输出视图" width="420"></td>
+        </tr>
+        <tr>
+          <td>世界模型</td>
+          <td>世界动作模型</td>
+        </tr>
+      </table>
+
+      <p class="center"><img src="assets/world_model_examples.png" alt="世界模型示例" width="840"></p>
+
+      <h2>设计空间</h2>
+      <p>我们首先根据预测发生的空间组织世界模型：</p>
+      <ul>
+        <li><strong>观测空间世界模型</strong>：直接预测未来观测，例如 RGB 图像、多视角 RGB、RGB-D 帧或点云。</li>
+        <li><strong>状态空间世界模型</strong>：先将观测抽象为结构化状态，再在状态空间中建模未来演化。</li>
+      </ul>
+
+      <table>
+        <tr>
+          <td><img src="assets/obsWM.png" alt="观测空间世界模型设计空间" width="420"></td>
+          <td><img src="assets/stateWM.png" alt="状态空间世界模型设计空间" width="420"></td>
+        </tr>
+        <tr>
+          <td>观测空间世界模型</td>
+          <td>状态空间世界模型</td>
+        </tr>
+      </table>
+
+      <h2>世界动作模型分类体系</h2>
+      <p>世界动作模型将面向未来的视觉预测与物理决策耦合起来。本文将代表性方法归纳为四种范式：先想象再执行、视频特征条件动作预测、联合视频-动作建模，以及用于策略学习的辅助视频预测。</p>
+
+      <p class="center"><img src="assets/wam.png" alt="世界动作模型分类体系" width="840"></p>
+
+      <h2>资源浏览器</h2>
+      <p>配套网站提供了一个与论文分类体系对齐的可筛选论文列表：</p>
+      <p><a href="https://clearlab-sustech.github.io/WorldModelSurvey/#resources">https://clearlab-sustech.github.io/WorldModelSurvey/#resources</a></p>
+
+      <h2>引用</h2>
+      <pre><code>@article{zhang2026worldactionmodels,
+  title   = {From World Models to World Action Models: A Concise Tutorial for Robotics},
+  author  = {Zhang, Xiaoxiong and Zeng, Xiong and Zhang, Wei},
+  year    = {2026},
+  note    = {Survey manuscript}
+}</code></pre>
+
+      <h2>联系</h2>
+      <p>欢迎提出建议、补充遗漏论文、改进分类体系或参与讨论：</p>
+      <pre><code>12433017@mail.sustech.edu.cn</code></pre>
+    </main>
+  </body>
+</html>
