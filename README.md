@@ -1,6 +1,6 @@
 # From World Models to World Action Models: A Concise Tutorial for Robotics
 
-**Language / 语言:** English | [中文](README.zh-CN.md)
+**Language / 语言:** English | [中文](https://github.com/clearlab-sustech/WorldModelSurvey/blob/main/README.zh-CN.md)
 
 [**Xiaoxiong Zhang**](https://xiaoxiongzzzz.github.io/),
 [**Xiong Zeng**](https://zengxiong111.github.io/zengxiong.github.io/), and
@@ -8,8 +8,10 @@
 Southern University of Science and Technology; LimX Dynamics
 
 [Website](https://clearlab-sustech.github.io/WorldModelSurvey/) |
-[ArXiv](https://arxiv.org/abs/2607.00836) 
-
+[ArXiv](https://arxiv.org/abs/2607.00836) |
+[Paper PDF](https://arxiv.org/pdf/2607.00836) |
+[Resource Browser](https://clearlab-sustech.github.io/WorldModelSurvey/#resources) |
+[Citation](https://clearlab-sustech.github.io/WorldModelSurvey/#citation)
 
 This repository hosts the companion website and curated bibliography for our
 concise tutorial on **world models** and **world action models** for robotics.
@@ -24,9 +26,18 @@ A **world** is the set of task-relevant entities, including the robot and its
 environment. A **physical AI task** asks a policy to drive the world from an
 initial state toward a goal set while satisfying task-specific constraints.
 
-| World | Physical AI tasks | Policy framework |
-| --- | --- | --- |
-| ![Components of a task-specific world](website/assets/world.png) | ![Physical AI task examples](website/assets/two_tasks.png) | ![Policy framework for physical AI tasks](website/assets/policy_all.png) |
+<table>
+  <tr>
+    <td align="center"><img src="https://raw.githubusercontent.com/clearlab-sustech/WorldModelSurvey/main/website/assets/world.png" alt="Components of a task-specific world" width="260"></td>
+    <td align="center"><img src="https://raw.githubusercontent.com/clearlab-sustech/WorldModelSurvey/main/website/assets/two_tasks.png" alt="Physical AI task examples" width="260"></td>
+    <td align="center"><img src="https://raw.githubusercontent.com/clearlab-sustech/WorldModelSurvey/main/website/assets/policy_all.png" alt="Policy framework for physical AI tasks" width="260"></td>
+  </tr>
+  <tr>
+    <td align="center">World</td>
+    <td align="center">Physical AI tasks</td>
+    <td align="center">Policy framework</td>
+  </tr>
+</table>
 
 ## World models and world action models
 
@@ -35,11 +46,20 @@ candidate actions, typically conditioned on the current observation. A **world
 action model** is a policy whose action generation is coupled, during training
 or inference, with a model or representation of future world evolution.
 
-| World model | World action model |
-| --- | --- |
-| ![World model input-output view](website/assets/world_model.png) | ![World action model input-output view](website/assets/world_action_model.png) |
+<table>
+  <tr>
+    <td align="center"><img src="https://raw.githubusercontent.com/clearlab-sustech/WorldModelSurvey/main/website/assets/world_model.png" alt="World model input-output view" width="420"></td>
+    <td align="center"><img src="https://raw.githubusercontent.com/clearlab-sustech/WorldModelSurvey/main/website/assets/world_action_model.png" alt="World action model input-output view" width="420"></td>
+  </tr>
+  <tr>
+    <td align="center">World model</td>
+    <td align="center">World action model</td>
+  </tr>
+</table>
 
-![Examples of world models](website/assets/world_model_examples.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/clearlab-sustech/WorldModelSurvey/main/website/assets/world_model_examples.png" alt="Examples of world models" width="840">
+</p>
 
 ## Design space
 
@@ -51,9 +71,16 @@ performed:
 - **State-space world models** first abstract observations into structured
   states, then model future evolution in that state space.
 
-| Observation-space world models | State-space world models |
-| --- | --- |
-| ![Observation-space world model design space](website/assets/obsWM.png) | ![State-space world model design space](website/assets/stateWM.png) |
+<table>
+  <tr>
+    <td align="center"><img src="https://raw.githubusercontent.com/clearlab-sustech/WorldModelSurvey/main/website/assets/obsWM.png" alt="Observation-space world model design space" width="420"></td>
+    <td align="center"><img src="https://raw.githubusercontent.com/clearlab-sustech/WorldModelSurvey/main/website/assets/stateWM.png" alt="State-space world model design space" width="420"></td>
+  </tr>
+  <tr>
+    <td align="center">Observation-space world models</td>
+    <td align="center">State-space world models</td>
+  </tr>
+</table>
 
 ## World action model taxonomy
 
@@ -62,7 +89,9 @@ decision making. The tutorial groups representative methods into four
 paradigms: imagine-then-execute, video-feature-conditioned action prediction,
 joint video-action modeling, and auxiliary video prediction for policy learning.
 
-![Taxonomy of world action model paradigms](website/assets/wam.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/clearlab-sustech/WorldModelSurvey/main/website/assets/wam.png" alt="Taxonomy of world action model paradigms" width="840">
+</p>
 
 ## Resource browser
 

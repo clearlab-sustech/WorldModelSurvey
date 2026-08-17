@@ -1,6 +1,6 @@
 # 从世界模型到世界动作模型：面向机器人学的简明教程
 
-**语言 / Language:** [English](README.md) | 中文
+**语言 / Language:** [English](https://github.com/clearlab-sustech/WorldModelSurvey/blob/main/README.md) | 中文
 
 [**Xiaoxiong Zhang**](https://xiaoxiongzzzz.github.io/),
 [**Xiong Zeng**](https://zengxiong111.github.io/zengxiong.github.io/) 和
@@ -8,8 +8,8 @@
 南方科技大学；LimX Dynamics
 
 [项目主页](https://clearlab-sustech.github.io/WorldModelSurvey/) |
-[arXiv](https://arxiv.org/abs/2607.00836) |
-[论文 PDF](https://clearlab-sustech.github.io/WorldModelSurvey/assets/Understanding_World_Models__A_Tutorial_Perspective.pdf) |
+[ArXiv](https://arxiv.org/abs/2607.00836) |
+[论文 PDF](https://arxiv.org/pdf/2607.00836) |
 [资源浏览器](https://clearlab-sustech.github.io/WorldModelSurvey/#resources) |
 [引用](https://clearlab-sustech.github.io/WorldModelSurvey/#citation)
 
@@ -19,19 +19,37 @@
 
 **世界（world）** 是任务相关实体的集合，包括机器人及其环境。**物理 AI 任务** 要求策略在满足任务约束的同时，将世界从初始状态驱动到目标集合。
 
-| World | 物理 AI 任务 | 策略框架 |
-| --- | --- | --- |
-| ![任务特定世界的组成部分](website/assets/world.png) | ![物理 AI 任务示例](website/assets/two_tasks.png) | ![物理 AI 任务策略框架](website/assets/policy_all.png) |
+<table>
+  <tr>
+    <td align="center"><img src="https://raw.githubusercontent.com/clearlab-sustech/WorldModelSurvey/main/website/assets/world.png" alt="任务特定世界的组成部分" width="260"></td>
+    <td align="center"><img src="https://raw.githubusercontent.com/clearlab-sustech/WorldModelSurvey/main/website/assets/two_tasks.png" alt="物理 AI 任务示例" width="260"></td>
+    <td align="center"><img src="https://raw.githubusercontent.com/clearlab-sustech/WorldModelSurvey/main/website/assets/policy_all.png" alt="物理 AI 任务策略框架" width="260"></td>
+  </tr>
+  <tr>
+    <td align="center">World</td>
+    <td align="center">物理 AI 任务</td>
+    <td align="center">策略框架</td>
+  </tr>
+</table>
 
 ## 世界模型与世界动作模型
 
 **世界模型** 预测未来观测或状态如何在候选动作下演化，通常以当前观测为条件。**世界动作模型** 是一类策略，其动作生成在训练或推理阶段与未来世界演化的模型或表示相耦合。
 
-| 世界模型 | 世界动作模型 |
-| --- | --- |
-| ![世界模型输入输出视图](website/assets/world_model.png) | ![世界动作模型输入输出视图](website/assets/world_action_model.png) |
+<table>
+  <tr>
+    <td align="center"><img src="https://raw.githubusercontent.com/clearlab-sustech/WorldModelSurvey/main/website/assets/world_model.png" alt="世界模型输入输出视图" width="420"></td>
+    <td align="center"><img src="https://raw.githubusercontent.com/clearlab-sustech/WorldModelSurvey/main/website/assets/world_action_model.png" alt="世界动作模型输入输出视图" width="420"></td>
+  </tr>
+  <tr>
+    <td align="center">世界模型</td>
+    <td align="center">世界动作模型</td>
+  </tr>
+</table>
 
-![世界模型示例](website/assets/world_model_examples.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/clearlab-sustech/WorldModelSurvey/main/website/assets/world_model_examples.png" alt="世界模型示例" width="840">
+</p>
 
 ## 设计空间
 
@@ -40,15 +58,24 @@
 - **观测空间世界模型**：直接预测未来观测，例如 RGB 图像、多视角 RGB、RGB-D 帧或点云。
 - **状态空间世界模型**：先将观测抽象为结构化状态，再在状态空间中建模未来演化。
 
-| 观测空间世界模型 | 状态空间世界模型 |
-| --- | --- |
-| ![观测空间世界模型设计空间](website/assets/obsWM.png) | ![状态空间世界模型设计空间](website/assets/stateWM.png) |
+<table>
+  <tr>
+    <td align="center"><img src="https://raw.githubusercontent.com/clearlab-sustech/WorldModelSurvey/main/website/assets/obsWM.png" alt="观测空间世界模型设计空间" width="420"></td>
+    <td align="center"><img src="https://raw.githubusercontent.com/clearlab-sustech/WorldModelSurvey/main/website/assets/stateWM.png" alt="状态空间世界模型设计空间" width="420"></td>
+  </tr>
+  <tr>
+    <td align="center">观测空间世界模型</td>
+    <td align="center">状态空间世界模型</td>
+  </tr>
+</table>
 
 ## 世界动作模型分类体系
 
 世界动作模型将面向未来的视觉预测与物理决策耦合起来。本文将代表性方法归纳为四种范式：先想象再执行、视频特征条件动作预测、联合视频-动作建模，以及用于策略学习的辅助视频预测。
 
-![世界动作模型分类体系](website/assets/wam.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/clearlab-sustech/WorldModelSurvey/main/website/assets/wam.png" alt="世界动作模型分类体系" width="840">
+</p>
 
 ## 资源浏览器
 
