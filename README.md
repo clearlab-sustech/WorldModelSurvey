@@ -1,6 +1,6 @@
 # From World Models to World Action Models: A Concise Tutorial for Robotics
 
-**Language / 语言:** English | [中文](https://github.com/clearlab-sustech/WorldModelSurvey/blob/main/README.zh-CN.md?plain=1)
+**Language / 语言:** English | [中文](https://clearlab-sustech.github.io/WorldModelSurvey/readme-zh.html)
 
 [**Xiaoxiong Zhang**](https://xiaoxiongzzzz.github.io/),
 [**Xiong Zeng**](https://zengxiong111.github.io/zengxiong.github.io/), and
