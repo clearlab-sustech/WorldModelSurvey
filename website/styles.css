@@ -501,10 +501,6 @@ figcaption {
   object-fit: contain;
 }
 
-.model-comparison-grid a:nth-child(2) img {
-  width: 84%;
-}
-
 .policy-row,
 .examples-row {
   display: grid;
@@ -970,10 +966,6 @@ figcaption {
 
   .model-comparison-grid img {
     height: clamp(100px, 23vw, 140px);
-  }
-
-  .model-comparison-grid a:nth-child(2) img {
-    width: 82%;
   }
 
   .introduction-copy {
