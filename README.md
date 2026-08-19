@@ -9,12 +9,7 @@ Southern University of Science and Technology; LimX Dynamics
 
 [ArXiv](https://arxiv.org/abs/2607.00836) 
 
-This repository hosts the companion website and curated bibliography for our
-concise tutorial on **world models** and **world action models** for robotics.
-Rather than aiming to be an exhaustive survey, the tutorial builds a compact
-architectural view: what constitutes a world, what a physical AI task asks a
-policy to do, how world models predict future world evolution, and how world
-action models couple those futures with executable actions.
+The following is a short summary for the tutorial. More details can be found in the arXiv Paper.
 
 ## Architectural view
 
